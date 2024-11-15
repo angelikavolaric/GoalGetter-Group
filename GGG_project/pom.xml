@@ -7,7 +7,7 @@
     <name>GGG</name>
     <description>Sample Kumuluz Project</description>
     <modules>
-
+        <module>storitevBelezenjeUr</module>
         <module>storitevKartice</module>
     </modules>
     <properties>
