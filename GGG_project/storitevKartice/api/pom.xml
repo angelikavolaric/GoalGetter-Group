@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>si.fri</groupId>
-        <artifactId>storitevKartice</artifactId>
+        <artifactId>goalgettergroup</artifactId>
         <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <groupId>si.fri.kartice</groupId>
+    <!--groupId>si.fri.kartice</groupId-->
     <artifactId>api</artifactId>
 
     <properties>

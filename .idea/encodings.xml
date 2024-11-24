@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/GGG_project/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/storitve/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GGG_project/storitevKartice/storitve/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

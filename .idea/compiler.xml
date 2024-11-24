@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api (1) (si.fri.belezenje)" />
+        <module name="api (2) (si.fri)" />
+        <module name="entitete (1) (si.fri.belezenje)" />
+        <module name="storitve (2) (si.fri)" />
+        <module name="storitve (1) (si.fri.belezenje)" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
