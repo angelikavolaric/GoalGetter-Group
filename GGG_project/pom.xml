@@ -7,8 +7,8 @@
     <name>GGG</name>
     <description>Sample Kumuluz Project</description>
     <modules>
-
         <module>storitevKartice</module>
+        <module>storitevBelezenjeUr</module>
     </modules>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -44,6 +44,17 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-jax-rs-jersey</artifactId>
         </dependency>
+
+
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+
+
+
     </dependencies>
     <build>
         <plugins>
