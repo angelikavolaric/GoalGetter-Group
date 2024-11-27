@@ -18,8 +18,8 @@ public class KarticeSeznam {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "naziv")
-    private String naziv;
+    @Column(name = "predmet")
+    private String predmet;
 
     @Column(name = "opis")
     private String opis;
@@ -34,7 +34,7 @@ public class KarticeSeznam {
     @OneToMany(mappedBy = "karticeSeznam", cascade = CascadeType.ALL)
     private List<Kartica> kartice;
 
-    /*@ManyToMany(cascade = {
+   /* @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE
     })*/
@@ -47,23 +47,23 @@ public class KarticeSeznam {
         this.id = id;
     }
 
-    public String getNaziv() {
-        return naziv;
+    public String getPredmet() {
+        return predmet;
     }
 
-    public void setNaziv(String naziv) {
-        this.naziv = naziv;
+    public void setPredmet(String predmet) {
+        this.predmet = predmet;
     }
 
-   /* public String getOpis() {
+    public String getOpis() {
         return opis;
     }
 
     public void setOpis(String opis) {
         this.opis = opis;
     }
-*/
-    public Instant getUstvarjen() {
+
+    public Instant getUstvaren() {
         return ustvarjen;
     }
 
