@@ -86,7 +86,7 @@ public class KarticeSeznam {
         return kartice;
     }
 
-    public void setArtikli(List<Kartica> kartice) {
+    public void setKartice(List<Kartica> kartice) {
         this.kartice = kartice;
     }
 

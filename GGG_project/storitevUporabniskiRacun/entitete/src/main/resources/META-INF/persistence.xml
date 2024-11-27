@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="kartice-jpa" transaction-type="JTA">
-        <jta-data-source>jdbc/KarticeSeznamiDS</jta-data-source>
+        <jta-data-source>jdbc/UporabnikiSeznamiDS</jta-data-source>
 
 
-        <class>si.fri.kartice.entitete.KarticeSeznam</class>
+        <class>si.fri.kartice.entitete.PrijateljiSeznam</class>
         <class>si.fri.kartice.entitete.Uporabnik</class>
-        <class>si.fri.kartice.entitete.Kartica</class>
 
 
-        <class>si.fri.kartice.pretvorniki.InstantPretvornik</class>
+        <class>si.fri.uporabniki.pretvorniki.InstantPretvornik</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

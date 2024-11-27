@@ -21,7 +21,7 @@ kumuluzee:
         read-timeout: 5000
 integrations:
   priporocilni-sistem:
-    base-url: http://localhost:8081/v1/kartice
+    base-url: http://localhost:8081/v1/racuni
 
 #server:
 #  port: 8080
