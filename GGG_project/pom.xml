@@ -1,20 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>si.fri</groupId>
+    <groupId>si.fri.prpo.goalgettergroup</groupId>
     <artifactId>goalgettergroup</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GGG</name>
     <description>Sample Kumuluz Project</description>
     <modules>
-        <module>storitevBelezenjeUr</module>
+        <!--module>storitevBelezenjeUr</module-->
         <module>storitevKartice</module>
     </modules>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kumuluzee.version>4.1.0</kumuluzee.version>
+        <kumuluzee-cors.version>2.0.0</kumuluzee-cors.version>
         <postgresql.version>42.5.1</postgresql.version>
     </properties>
     <dependencyManagement>
@@ -45,6 +46,11 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-jax-rs-jersey</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.cors</groupId>
+            <artifactId>kumuluzee-cors</artifactId>
+            <version>${kumuluzee-cors.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -67,6 +73,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>

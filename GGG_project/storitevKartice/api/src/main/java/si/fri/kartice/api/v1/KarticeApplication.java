@@ -7,13 +7,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;
 
-@ApplicationPath("v1/api/kartice")
+@ApplicationPath("v1")
 //@ApplicationScoped
-@Path("seznami")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+//@Path("seznami")
+//@Consumes(MediaType.APPLICATION_JSON)
+//@Produces(MediaType.APPLICATION_JSON)
 //@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
-public class KarticeApplication {
+public class KarticeApplication extends Application {
 
 
 

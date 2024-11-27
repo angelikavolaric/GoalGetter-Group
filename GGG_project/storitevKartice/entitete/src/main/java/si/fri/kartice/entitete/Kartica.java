@@ -1,5 +1,3 @@
-//package si.fri;
-
 package si.fri.kartice.entitete;
 
 import javax.json.bind.annotation.JsonbTransient;
