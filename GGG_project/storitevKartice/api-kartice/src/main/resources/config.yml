@@ -1,0 +1,34 @@
+#kumuluzee:
+#  name: goalgettergroup
+#  version: 1.0.0
+#  env:
+#    name: dev
+  #datasources:
+  #  - jndi-name: jdbc/GoalGetterGroupDS
+  #    connection-url: jdbc:postgresql://localhost:5432/goalgettergroup
+  #    username: goalgettergroup
+  #    password: gggpostgres
+  #    max-pool-size: 20
+#  server:
+#    port: 8080
+
+ # health:
+ #   checks:
+ #     data-source-health-check:
+ #       type: liveness
+ #       jndi-name: jdbc/GoalGetterGroupDS
+ # rest-client:
+ #   registrations:
+ #     - class: priporocilni-sistem-api
+ #       url: http://localhost:8081/v1
+ #       read-timeout: 5000
+#integrations:
+#  priporocilni-sistem:
+#    base-url: http://localhost:8081/v1
+
+#server:
+#  port: 8080
+
+#kumuluzee:
+#  aplication:
+#    name: kartice

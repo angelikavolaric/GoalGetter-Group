@@ -1,4 +1,4 @@
-package si.fri.belezenje.api.v1;
+package si.fri.ggg.belezenje.api.v1;
 
 public class BelezenjeApplication {
 }
