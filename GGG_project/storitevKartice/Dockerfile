@@ -1,6 +1,7 @@
+FROM openjdk:17-jdk-slim
+RUN mkdir /app
+WORKDIR /app
 
-FROM openjdk:17-jdk-alpine
+COPY api-kartice/target/api-kartice-1.0.0-SNAPSHOT.jar api-kartice-1.0.0-SNAPSHOT.jar
 VOLUME /tmp
-ARG JAR_FILE=api/target/"api-1.0.0-SNAPSHOT.jar"
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/api-kartice-1.0.0-SNAPSHOT.jar"]

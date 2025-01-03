@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: gggDB
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: goalgettergroup_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+       - ./entitete-uporabnik/resources/sql-scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql     #- ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - postgres
+volumes:
+  postgres_data:
+networks:
+   postgres:

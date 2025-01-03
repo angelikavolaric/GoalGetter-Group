@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>si.fri</groupId>
+    <groupId>si.fri.ggg</groupId>
     <artifactId>goalgettergroup</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -9,7 +10,8 @@
     <modules>
         <!--module>storitevBelezenjeUr</module-->
         <module>storitevKartice</module>
-        <module>storitevUporabniskiRacun</module>
+        <module>storitevUporabniki</module>
+        <!--module>storitevUporabniskiRacun</module-->
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -28,9 +30,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <dependencies>
+
         <dependency>
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-core</artifactId>
@@ -58,7 +58,19 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>si.fri.ggg</groupId>
+            <artifactId>storitevKartice</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>si.fri.ggg</groupId>
+            <artifactId>storitevUporabniki</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
