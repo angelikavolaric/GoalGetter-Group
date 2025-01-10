@@ -9,7 +9,7 @@
         <class>si.fri.ggg.uporabniki.pretvorniki.InstantPretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/goalgettergroup_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://uporabnikiDatabase:5432/uporabniki_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
