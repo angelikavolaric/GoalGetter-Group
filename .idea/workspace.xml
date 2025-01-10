@@ -7,19 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/db/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/db/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/Obvestila.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaStoritve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaViri.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/ObvestilaExternalApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/viri/ObvestilaExternalVir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/servleti/JPAServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/sql-scripts/init-db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zap.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +131,30 @@
       <workItem from="1735550161150" duration="138502000" />
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
-      <workItem from="1736511629878" duration="17917000" />
+      <workItem from="1736511629878" duration="18317000" />
     </task>
+    <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736549959699</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1736549959699</updated>
+    </task>
+    <task id="LOCAL−00002" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736550118164</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1736550118164</updated>
+    </task>
+    <task id="LOCAL−00003" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736550136267</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1736550136267</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,5 +182,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="delovanje storitevKartice in storitevUporabnik v dockerju" />
+    <option name="LAST_COMMIT_MESSAGE" value="delovanje storitevKartice in storitevUporabnik v dockerju" />
   </component>
 </project>
