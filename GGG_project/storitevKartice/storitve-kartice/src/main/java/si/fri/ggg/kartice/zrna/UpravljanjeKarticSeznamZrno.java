@@ -32,8 +32,8 @@ public class UpravljanjeKarticSeznamZrno {
         // cleanup resources if needed
     }
 
-       // @PersistenceContext(unitName = "storitevkartice-jpa")
-        //private EntityManager em;
+     //   @PersistenceContext(unitName = "storitevkartice-jpa")
+    //    private EntityManager em;
 
     private EntityManagerFactory emf;
     private EntityManager em;

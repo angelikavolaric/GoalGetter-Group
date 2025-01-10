@@ -40,6 +40,8 @@ public class KarticaZrno {
 ////
     private EntityManagerFactory emf;
     private EntityManager em;
+    //@PersistenceContext(unitName = "storitevkartice-jpa")
+    //private EntityManager em;
 
     public KarticaZrno() {
         // Initialize the EntityManagerFactory and EntityManager
@@ -47,8 +49,7 @@ public class KarticaZrno {
         em = emf.createEntityManager();
     }
     ////
-  //  @PersistenceContext(unitName = "storitevkartice-jpa")
-    //private EntityManager em;
+
 
     /*@Transactional
     public Kartica dodajKartico(Kartica novaKartica, KarticeSeznam seznam) {

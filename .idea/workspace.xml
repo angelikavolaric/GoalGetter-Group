@@ -1,18 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="" />
+    <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/db/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/db/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="cdi.beans_2_0" />
+        <option value="Class" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2nsWXqnxOCj23o7vGDvGXDdmFNV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,17 +52,56 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.goalgettergroup [clean].executor": "Run",
+    "Maven.goalgettergroup [install].executor": "Run",
+    "Maven.storitevKartice [clean].executor": "Run",
+    "Maven.storitevKartice [install].executor": "Run",
+    "Maven.storitevKartice [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.storitevKartice [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group",
+    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Users\\volar\\Sola\\FRI\\3. letnik\\prpo\\GoalGetter-Group\\GGG_project\\frontend\\goalgettergroup\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ],
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki\db\sql-scripts" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\db" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\entitete-kartice\resources\sql-scripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\." />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -48,10 +119,41 @@
       <option name="presentableId" value="Default" />
       <updated>1729762305333</updated>
       <workItem from="1729762306411" duration="118000" />
+      <workItem from="1732018830662" duration="154000" />
+      <workItem from="1732313657541" duration="65762000" />
+      <workItem from="1732990708236" duration="5745000" />
+      <workItem from="1732997559740" duration="32830000" />
+      <workItem from="1735550161150" duration="138502000" />
+      <workItem from="1736509869637" duration="789000" />
+      <workItem from="1736510684585" duration="551000" />
+      <workItem from="1736511629878" duration="17917000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="storitvekartice" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

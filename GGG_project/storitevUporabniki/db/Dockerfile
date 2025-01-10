@@ -2,7 +2,7 @@ FROM postgres:latest
 
 ENV POSTGRES_USER=user
 ENV POSTGRES_PASSWORD=passwd
-ENV POSTGRES_DB=kartice_database
+ENV POSTGRES_DB=uporabniki_database
 
 
 COPY ./db/sql-scripts/init-db.sql /docker-entrypoint-initdb.d/

@@ -6,12 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api (1) (si.fri.belezenje)" />
-        <module name="api (2) (si.fri)" />
-        <module name="entitete (1) (si.fri.belezenje)" />
-        <module name="storitve (2) (si.fri)" />
-        <module name="storitve (1) (si.fri.belezenje)" />
+        <module name="entitete-kartice" />
+        <module name="storitve-uporabniki" />
+        <module name="storitve-kartice" />
+        <module name="api-kartice" />
+        <module name="api-uporabniki" />
+        <module name="entitete-uporabniki" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17">
+      <module name="api (1) (si.fri.belezenje)" target="19" />
+      <module name="api (2) (si.fri)" target="19" />
+      <module name="entitete (1) (si.fri.belezenje)" target="19" />
+      <module name="entitete (2) (si.fri)" target="19" />
+      <module name="storitevBelezenjeUr" target="19" />
+      <module name="storitve (1) (si.fri.belezenje)" target="19" />
+      <module name="storitve (2) (si.fri)" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

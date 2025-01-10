@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/GGG_project/pom.xml" />
+        <option value="$PROJECT_DIR$/GGG_project/storitevKartice/src/main/java/storitve-kartice/pom.xml" />
+        <option value="$PROJECT_DIR$/GGG_project/storitevKartice/src/main/java/api-kartice/pom.xml" />
+        <option value="$PROJECT_DIR$/GGG_project/storitevKartice/src/main/java/entitete-kartice/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="PWA">
+    <option name="enabled" value="true" />
+    <option name="wasEnabledAtLeastOnce" value="true" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

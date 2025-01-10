@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GoalGetter-Group.iml" filepath="$PROJECT_DIR$/.idea/GoalGetter-Group.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GGG_project/goalgettergroup.iml" filepath="$PROJECT_DIR$/GGG_project/goalgettergroup.iml" />
     </modules>
   </component>
 </project>

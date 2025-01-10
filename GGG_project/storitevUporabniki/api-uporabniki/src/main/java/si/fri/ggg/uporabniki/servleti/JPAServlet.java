@@ -24,12 +24,12 @@ public class JPAServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(JPAServlet.class.getName());
 
-    @Inject
+    /*@Inject
     private UporabnikZrno uporabnikZrno; // EJB for Uporabnik-related logic
 
     @Inject
     private UpravljanjeUporabnikovZrno upravljanjeUporabnikovZrno; // EJB for UporabnikiSeznam-related logic
-
+*/
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset=UTF-8");
