@@ -1,8 +1,8 @@
 
-CREATE TABLE karticeSeznam (id SERIAL PRIMARY KEY,predmet VARCHAR(255) NOT NULL,opis VARCHAR(255),ustvarjen TIMESTAMP NOT NULL,uporabnikId INT NOT NULL);
+CREATE TABLE IF NOT EXISTS karticeSeznam (id SERIAL PRIMARY KEY,predmet VARCHAR(255) NOT NULL,opis VARCHAR(255),ustvarjen TIMESTAMP NOT NULL,uporabnikId INT NOT NULL);
 
 
-CREATE TABLE kartica (id SERIAL PRIMARY KEY, vprasanje VARCHAR(255) NOT NULL, odgovor TEXT NOT NULL, karticeSeznamId INT NOT NULL, FOREIGN KEY (karticeSeznamId) REFERENCES karticeSeznam (id));
+CREATE TABLE IF NOT EXISTS kartica (id SERIAL PRIMARY KEY, vprasanje VARCHAR(255) NOT NULL, odgovor TEXT NOT NULL, karticeSeznamId INT NOT NULL, FOREIGN KEY (karticeSeznamId) REFERENCES karticeSeznam (id));
                                 --#FOREIGN KEY (uporabnikId) REFERENCES uporabnik (id)
 
 INSERT INTO karticeSeznam (predmet, opis, ustvarjen, uporabnikId) VALUES ('Undefined', '', '2016-05-28T17:39:44.937', 0);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="storitevkartice-jpa">
-        <jta-data-source>jdbc/GoalGetterGroupDS</jta-data-source>
+        <!--jta-data-source>jdbc/KarticeDS</jta-data-source-->
         <!--jta-data-source>java:GoalGetterGroupDS</jta-data-source-->
         <class>si.fri.ggg.kartice.entitete.KarticeSeznam</class>
         <class>si.fri.ggg.kartice.entitete.Kartica</class>
@@ -10,7 +10,7 @@
         <class>si.fri.ggg.kartice.pretvorniki.InstantPretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/goalgettergroup_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/kartice_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

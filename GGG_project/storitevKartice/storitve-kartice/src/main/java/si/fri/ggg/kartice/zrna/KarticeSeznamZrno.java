@@ -33,6 +33,8 @@ public class KarticeSeznamZrno {
     }
     private EntityManagerFactory emf;
     private EntityManager em;
+    //@PersistenceContext(unitName = "storitevkartice-jpa")
+    //private EntityManager em;
 
     public KarticeSeznamZrno() {
         // Initialize the EntityManagerFactory and EntityManager

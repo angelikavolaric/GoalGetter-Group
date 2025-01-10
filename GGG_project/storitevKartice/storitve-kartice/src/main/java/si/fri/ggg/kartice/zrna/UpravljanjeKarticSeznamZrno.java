@@ -31,10 +31,10 @@ public class UpravljanjeKarticSeznamZrno {
         log.info("Deinicializacija zrna " + UpravljanjeKarticSeznamZrno.class.getSimpleName());
         // cleanup resources if needed
     }
-    /*
-        @PersistenceContext(unitName = "storitevkartice-jpa")
-        private EntityManager em;
-    */
+
+       // @PersistenceContext(unitName = "storitevkartice-jpa")
+        //private EntityManager em;
+
     private EntityManagerFactory emf;
     private EntityManager em;
 
@@ -70,68 +70,3 @@ public class UpravljanjeKarticSeznamZrno {
     }
 
 }
-
-
-/*package si.fri.ggg.kartice.zrna;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import java.util.logging.Logger;
-
-//import javax.enterprise.context.ApplicationScoped;
-
-import si.fri.ggg.kartice.dtos.KarticaDto;
-import si.fri.ggg.kartice.dtos.KarticeSeznamDto;
-import si.fri.ggg.kartice.entitete.Kartica;
-import si.fri.ggg.kartice.entitete.KarticeSeznam;
-
-//@ApplicationScoped
-public class UpravljanjeKarticSeznamZrno {
-
-
-    private Logger log = Logger.getLogger(UpravljanjeKarticSeznamZrno.class.getName());
-
-    //@Inject
-    //private UporabnikiZrno uporabnikiZrno;
-
-    @Inject
-    private KarticeSeznamZrno karticeSeznamiZrno;
-
-    @Inject
-    private KarticaZrno karticaZrno;
-
-    @PostConstruct
-    private void init() {
-        log.info("Inicializacija zrna " + UpravljanjeKarticSeznamZrno.class.getSimpleName());
-    }
-
-    @PreDestroy
-    private void destroy() {
-        log.info("Deinicializacija zrna " + UpravljanjeKarticSeznamZrno.class.getSimpleName());
-
-        // zapiranje virov
-    }
-
-    @Transactional
-    //@ValidirajKarticeSeznamDto
-    public KarticeSeznam ustvariKarticeSeznam(KarticeSeznamDto karticeSeznamDto) {
-
-        // TODO: missing implementation
-
-        return null;
-
-    }
-
-    @Transactional
-    public Kartica dodajKarticoNaKarticeSeznam(int karticeSeznamId, KarticaDto karticaDto) {
-
-        // TODO: missing implementation
-
-        return null;
-
-    }
-
-}
-*/

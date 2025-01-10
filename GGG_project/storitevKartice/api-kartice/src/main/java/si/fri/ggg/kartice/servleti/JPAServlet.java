@@ -25,12 +25,12 @@ public class JPAServlet extends HttpServlet {
 
     private static final Logger log = Logger.getLogger(JPAServlet.class.getName());
 
-    @Inject
+    /*@Inject
     private KarticaZrno karticaZrno; // EJB for Kartica-related logic
 
     @Inject
     private UpravljanjeKarticSeznamZrno upravljanjeKarticSeznamZrno; // EJB for KarticeSeznam-related logic
-
+*/
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 

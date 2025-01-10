@@ -2,7 +2,7 @@ version: '3'
 services:
   postgres:
     image: postgres:latest
-    container_name: gggDB
+    container_name: karticeDatabase
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: passwd
@@ -10,11 +10,26 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-       - ./entitete-kartice/resources/sql-scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql     #- ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      #- postgres_data:/var/lib/postgresql/data
+      - ./entitete-kartice/src/main/resources/sql-scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
     networks:
+      - kartice
+
+  storitevKartice:
+    container_name: karticeContainer
+    image: ggg_project-storitevkartice
+    #       build: ./service1
+    depends_on:
       - postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - kartice
+
 volumes:
   postgres_data:
+
 networks:
-   postgres:
+ kartice:
+#    driver: bridge

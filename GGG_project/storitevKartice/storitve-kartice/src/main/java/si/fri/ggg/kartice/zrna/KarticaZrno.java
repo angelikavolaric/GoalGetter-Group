@@ -47,7 +47,7 @@ public class KarticaZrno {
         em = emf.createEntityManager();
     }
     ////
-    //@PersistenceContext(unitName = "storitevkartice-jpa")
+  //  @PersistenceContext(unitName = "storitevkartice-jpa")
     //private EntityManager em;
 
     /*@Transactional

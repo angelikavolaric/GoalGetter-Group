@@ -15,6 +15,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.glassfish.jersey.internal.Errors;
 import si.fri.ggg.kartice.dtos.KarticaDto;
 import si.fri.ggg.kartice.entitete.Kartica;
 import si.fri.ggg.kartice.entitete.KarticeSeznam;
@@ -41,7 +42,16 @@ public class KarticaVir {
                     description = "Seznam kartic",
                     content = @Content(schema = @Schema(implementation = Kartica.class, type = SchemaType.ARRAY)),
                     headers = {@Header(name = "X-Total-Count", description = "Število vrnjenih kartic")}
-            )})
+            ),
+            @APIResponse(responseCode = "400",
+            description = "Napaka v vhodnih podatkih",
+            content = @Content(schema = @Schema(implementation = Errors.ErrorMessage.class))
+            ),
+            @APIResponse(responseCode = "500",
+                    description = "Napaka strežnika",
+                    content = @Content(schema = @Schema(implementation = Errors.ErrorMessage.class))
+            )
+            })
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

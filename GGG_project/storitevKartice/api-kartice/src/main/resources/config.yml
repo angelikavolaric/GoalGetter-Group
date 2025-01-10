@@ -1,14 +1,14 @@
-#kumuluzee:
-#  name: goalgettergroup
-#  version: 1.0.0
-#  env:
-#    name: dev
+kumuluzee:
+  name: storitevKartice
+  version: 1.0.0
+  env:
+    name: dev
   #datasources:
-  #  - jndi-name: jdbc/GoalGetterGroupDS
-  #    connection-url: jdbc:postgresql://localhost:5432/goalgettergroup
-  #    username: goalgettergroup
-  #    password: gggpostgres
-  #    max-pool-size: 20
+    #- jndi-name: jdbc/KarticeDS
+  #    connection-url: jdbc:postgresql://localhost:5432/kartice_database
+  #    username: user
+    #  password: passwd
+    #  max-pool-size: 20
 #  server:
 #    port: 8080
 
