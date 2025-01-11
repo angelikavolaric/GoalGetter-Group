@@ -17,12 +17,14 @@ public class Cilj {
 
     @Column(name = "opis")
     private String opis;
-    @Column(name = "cilj ur")
+    @Column(name = "\"cilj ur\"")
     private Integer ciljUr;
-    @Column(name = "cilj min")
+    @Column(name = "\"cilj min\"")
     private Integer ciljMin;
     @Column(name = "ustvarjen",nullable = false, updatable = false)
     private Timestamp ustvarjen;
+    @Column(name = "uporabnikid")
+    private Integer uporabnikid;
 
     public Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
@@ -35,6 +37,10 @@ public class Cilj {
 
     public Integer getCiljMin() {return ciljMin;}
     public void setCiljMin(Integer ciljMin){this.ciljMin = ciljMin;}
+
+    public Integer getUporabnikid(){return uporabnikid;}
+
+    public void setUporabnikid(Integer uporabnikid) {this.uporabnikid = uporabnikid;}
 
     @PrePersist
     private void prePersist() {

@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  //moduleId: module.id,
+  selector: 'prpo-app',
+  template: `
+        <h1>{{naslov}}</h1>
+        <router-outlet></router-outlet>
+    `
 })
 export class AppComponent {
-  title = 'goalgettergroup';
+  naslov = 'Goal getter group';
+  title = 'Goal getter group';
 }

@@ -9,9 +9,12 @@
         <module name="api-belezenje" />
         <module name="entitete-kartice" />
         <module name="storitve-uporabniki" />
+        <module name="storitve-deljenje" />
         <module name="storitve-kartice" />
         <module name="entitete-belezenje" />
+        <module name="api-deljenje" />
         <module name="entitete-uporabniki" />
+        <module name="entitete-deljenje" />
         <module name="api-kartice" />
         <module name="api-uporabniki" />
         <module name="storitve-belezenje" />
