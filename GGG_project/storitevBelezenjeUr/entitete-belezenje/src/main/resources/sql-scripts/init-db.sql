@@ -1,17 +1,17 @@
 
-CREATE TABLE ureSeznam (id SERIAL PRIMARY KEY,
-                        opis VARCHAR(255),
-                        ustvarjen TIMESTAMP NOT NULL,
-                        predmet VARCHAR(255) DEFAULT 'undefined',
-                        uporabnikId INT NOT NULL);
+CREATE TABLE IF NOT EXISTS ureSeznam (id SERIAL PRIMARY KEY,
+                                      opis VARCHAR(255),
+    ustvarjen TIMESTAMP NOT NULL,
+    predmet VARCHAR(255) DEFAULT 'undefined',
+    uporabnikId INT NOT NULL);
 
 
-CREATE TABLE ure (id SERIAL PRIMARY KEY,
-                  "vnosi ur" INT NOT NULL,
-                  "vnosi min" INT NOT NULL,
-                  ureSeznamId INT NOT NULL,
-                  ustvarjen TIMESTAMP NOT NULL,
-                  FOREIGN KEY (ureSeznamId) REFERENCES ureSeznam (id));
+CREATE TABLE IF NOT EXISTS ure (id SERIAL PRIMARY KEY,
+                                "vnosi ur" INT NOT NULL,
+                                "vnosi min" INT NOT NULL,
+                                ureSeznamId INT NOT NULL,
+                                ustvarjen TIMESTAMP NOT NULL,
+                                FOREIGN KEY (ureSeznamId) REFERENCES ureSeznam (id));
 --#FOREIGN KEY (uporabnikId) REFERENCES uporabnik (id)
 
 INSERT INTO ureSeznam (opis, ustvarjen, predmet, uporabnikId) VALUES ('', '2020-09-26T10:30:54.937', '', 0);

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GoalGetter-Group.iml" filepath="$PROJECT_DIR$/.idea/GoalGetter-Group.iml" />
       <module fileurl="file://$PROJECT_DIR$/GGG_project/goalgettergroup.iml" filepath="$PROJECT_DIR$/GGG_project/goalgettergroup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitevBelezenjeUr.iml" filepath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitevBelezenjeUr.iml" />
     </modules>
   </component>
 </project>

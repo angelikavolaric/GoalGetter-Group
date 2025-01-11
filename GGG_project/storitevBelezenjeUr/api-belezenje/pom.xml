@@ -54,7 +54,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>si.fri.ggg</groupId>
             <artifactId>storitve-belezenje</artifactId>
