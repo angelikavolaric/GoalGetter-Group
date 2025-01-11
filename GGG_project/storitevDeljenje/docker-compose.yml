@@ -1,0 +1,37 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: deljenjeDatabase
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: deljenje_database
+    ports:
+      - "5439:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - deljenje
+
+  storitevDeljenje:
+    container_name: deljenjeContainer
+    image: ggg_project-storitevdeljenje
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8087:8080"
+    networks:
+      - deljenje
+
+volumes:
+  postgres_data:
+
+networks:
+  deljenje:
+#    driver: bridge
