@@ -18,9 +18,9 @@ public class Ure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "vnosi ur")
+    @Column(name = "\"vnosi ur\"")
     private Integer vnosiUr;
-    @Column(name = "vnosi min")
+    @Column(name = "\"vnosi min\"")
     private Integer vnosiMin;
     @Column(name = "ustvarjen",nullable = false, updatable = false)
     private Timestamp ustvarjen;

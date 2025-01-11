@@ -8,23 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/Obvestila.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaStoritve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaViri.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/ObvestilaExternalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/viri/ObvestilaExternalVir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/servleti/JPAServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeSeznamViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeSeznamViri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UpravljanjeSeznamovUr.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UpravljanjeSeznamovUr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreSeznamZrna.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreSeznamZrna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticaVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticaVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/Uporabnik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticeSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticeSeznamZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/java/si/fri/ggg/uporabniki/api/v1/viri/UporabnikVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/java/si/fri/ggg/uporabniki/api/v1/viri/UporabnikVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UpravljanjeUporabnikovZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UpravljanjeUporabnikovZrno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -59,6 +60,7 @@
   "keyToString": {
     "Maven.goalgettergroup [clean].executor": "Run",
     "Maven.goalgettergroup [install].executor": "Run",
+    "Maven.goalgettergroup [package].executor": "Run",
     "Maven.storitevKartice [clean].executor": "Run",
     "Maven.storitevKartice [install].executor": "Run",
     "Maven.storitevKartice [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
@@ -67,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project",
+    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project/storitevBelezenjeUr/db",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +79,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "settings.webpack",
     "ts.external.directory.path": "C:\\Users\\volar\\Sola\\FRI\\3. letnik\\prpo\\GoalGetter-Group\\GGG_project\\frontend\\goalgettergroup\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -93,18 +95,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevBelezenjeUr\db" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki\db\sql-scripts" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\db" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\entitete-kartice\resources\sql-scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\." />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -131,7 +133,7 @@
       <workItem from="1735550161150" duration="138502000" />
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
-      <workItem from="1736511629878" duration="18317000" />
+      <workItem from="1736511629878" duration="29664000" />
     </task>
     <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
       <option name="closed" value="true" />
@@ -154,13 +156,46 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1736550136267</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736550352133</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1736550352133</updated>
+    </task>
+    <task id="LOCAL−00005" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736608162347</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1736608162347</updated>
+    </task>
+    <task id="LOCAL−00006" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736611402151</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1736611402152</updated>
+    </task>
+    <task id="LOCAL−00007" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736611429461</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1736611429461</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="d7b70a28-17df-441f-b9fa-1892f69d89f8" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -180,11 +215,20 @@
             </State>
           </value>
         </entry>
+        <entry key="d7b70a28-17df-441f-b9fa-1892f69d89f8">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="delovanje storitevKartice in storitevUporabnik v dockerju" />
     <option name="LAST_COMMIT_MESSAGE" value="delovanje storitevKartice in storitevUporabnik v dockerju" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

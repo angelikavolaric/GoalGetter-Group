@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="storitevbelezenje-jpa">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-
+        <!--jta-data-source>jdbc/GoalGetterGroupDS</jta-data-source-->
         <class>si.fri.ggg.belezenje.entitete.UreSeznam</class>
         <class>si.fri.ggg.belezenje.entitete.Ure</class>
         <class>si.fri.ggg.belezenje.pretvorniki.Pretvornik</class>
 
         <properties>
-
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/goalgettergroup_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
@@ -20,14 +18,3 @@
         </properties>
     </persistence-unit>
 </persistence>
-
-<!--
-<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mydatabase"/>
-<property name="javax.persistence.jdbc.user" value="username"/>
-<property name="javax.persistence.jdbc.password" value="password"/>
-
-
-<property name="eclipselink.logging.level" value="FINE"/>
-<property name="eclipselink.target-database" value="PostgreSQL"/>
-<property name="eclipselink.ddl-generation" value="update"/-->

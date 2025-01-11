@@ -1,37 +1,31 @@
 package si.fri.ggg.kartice.api.v1.viri;
 
-//import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.*;
-
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
-import si.fri.ggg.kartice.dtos.KarticeSeznamDto;
 import si.fri.ggg.kartice.entitete.Kartica;
 import si.fri.ggg.kartice.entitete.KarticeSeznam;
 import si.fri.ggg.kartice.zrna.KarticaZrno;
 import si.fri.ggg.kartice.zrna.KarticeSeznamZrno;
 import si.fri.ggg.kartice.zrna.UpravljanjeKarticSeznamZrno;
 
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import java.security.Timestamp;
 import java.util.List;
-
+import java.util.logging.Logger;
 
 @SuppressWarnings("SpellCheckingInspection")
-//@ApplicationScoped
-//@Consumes(MediaType.APPLICATION_JSON)
-//@Produces(MediaType.APPLICATION_JSON)
 @CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
 @Path("/seznamiKartic")
 public class KarticeSeznamVir {
-
 
     private final KarticeSeznamZrno karticeSeznamZrno;
     private final UpravljanjeKarticSeznamZrno upravljanjeKarticSeznamZrno;
     @Context
     protected UriInfo uriInfo;
+
+    private static final Logger log = Logger.getLogger(KarticeSeznamVir.class.getName());
 
     @javax.inject.Inject
     public KarticeSeznamVir(KarticeSeznamZrno karticeSeznamZrno, UpravljanjeKarticSeznamZrno upravljanjeKarticSeznamZrno) {
@@ -41,73 +35,145 @@ public class KarticeSeznamVir {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<KarticeSeznam> getKarticeSeznam(){
-        KarticeSeznamZrno karticeSeznamZrno = new KarticeSeznamZrno();
-        return karticeSeznamZrno.pridobiVseKarticeSeznamu();
+    public Response getKarticeSeznam() {
+        try {
+            List<KarticeSeznam> seznamKartic = karticeSeznamZrno.pridobiVseKarticeSeznamu();
+            if (seznamKartic.isEmpty()) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No card lists found.")
+                        .build();
+            }
+            return Response.ok(seznamKartic).build();
+        } catch (Exception e) {
+            log.severe("Error retrieving card lists: " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public KarticeSeznam postKarticeSeznam(KarticeSeznam novKarticeSeznam){
-        return upravljanjeKarticSeznamZrno.ustvariKarticeSeznam(novKarticeSeznam);
+    public Response postKarticeSeznam(KarticeSeznam novKarticeSeznam) {
+        try {
+            if (novKarticeSeznam == null) {
+                return Response.status(Response.Status.BAD_REQUEST)
+                        .entity("Invalid input data.")
+                        .build();
+            }
+            KarticeSeznam createdSeznam = upravljanjeKarticSeznamZrno.ustvariKarticeSeznam(novKarticeSeznam);
+            return Response.status(Response.Status.CREATED).entity(createdSeznam).build();
+        } catch (Exception e) {
+            log.severe("Error creating card list: " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @GET
     @Path("/{karticaSeznamId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public KarticeSeznam getKarticaSeznam(@PathParam("karticaSeznamId") int karticaSeznamId) {
-        KarticeSeznamZrno karticeSeznamZrno = new KarticeSeznamZrno();
-        return karticeSeznamZrno.pridobiKarticeSeznam(karticaSeznamId);
+    public Response getKarticaSeznam(@PathParam("karticaSeznamId") int karticaSeznamId) {
+        try {
+            KarticeSeznam seznamKartic = karticeSeznamZrno.pridobiKarticeSeznam(karticaSeznamId);
+            if (seznamKartic == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Card list with ID " + karticaSeznamId + " not found.")
+                        .build();
+            }
+            return Response.ok(seznamKartic).build();
+        } catch (Exception e) {
+            log.severe("Error retrieving card list with ID " + karticaSeznamId + ": " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @PUT
     @Path("/{karticaSeznamId}")
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public KarticeSeznam putKarticaSeznam(@PathParam("karticaSeznamId") int karticaSeznamId, KarticeSeznam novKarticeSeznam) {
-        KarticeSeznamZrno karticeSeznamZrno = new KarticeSeznamZrno();
-        return karticeSeznamZrno.posodobiKarticeSeznam(karticaSeznamId, novKarticeSeznam);
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response putKarticaSeznam(@PathParam("karticaSeznamId") int karticaSeznamId, KarticeSeznam novKarticeSeznam) {
+        try {
+            KarticeSeznam updatedSeznam = karticeSeznamZrno.posodobiKarticeSeznam(karticaSeznamId, novKarticeSeznam);
+            if (updatedSeznam == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Card list with ID " + karticaSeznamId + " not found.")
+                        .build();
+            }
+            return Response.ok(updatedSeznam).build();
+        } catch (Exception e) {
+            log.severe("Error updating card list with ID " + karticaSeznamId + ": " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @DELETE
     @Path("/{karticaSeznamId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void deleteKarticeSeznam(@PathParam("karticaSeznamId") int karticaSeznamId) {
-        KarticeSeznamZrno karticeSeznamZrno = new KarticeSeznamZrno();
-        boolean result = karticeSeznamZrno.odstraniKarticeSeznam(karticaSeznamId);
-        //log.info("Seznam kartic " + karticaSeznamId + "izbrisan = " + result);
+    public Response deleteKarticeSeznam(@PathParam("karticaSeznamId") int karticaSeznamId) {
+        try {
+            boolean result = karticeSeznamZrno.odstraniKarticeSeznam(karticaSeznamId);
+            if (result) {
+                return Response.status(Response.Status.NO_CONTENT).build();
+            } else {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Card list with ID " + karticaSeznamId + " not found.")
+                        .build();
+            }
+        } catch (Exception e) {
+            log.severe("Error deleting card list with ID " + karticaSeznamId + ": " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @POST
     @Path("/{karticaSeznamId}/kartice")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Kartica postKartica(@PathParam("karticaSeznamId")Integer karticeSeznamId,Kartica novaKartica){
-        KarticaZrno karticaZrno = new KarticaZrno();
-        KarticeSeznamZrno karticeSeznamZrno = new KarticeSeznamZrno();
-        KarticeSeznam seznam = karticeSeznamZrno.pridobiKarticeSeznam(karticeSeznamId);
-        System.out.println("seznam V dodajanje " + seznam);
-        return karticaZrno.dodajKartico(novaKartica, seznam);
+    public Response postKartica(@PathParam("karticaSeznamId") Integer karticaSeznamId, Kartica novaKartica) {
+        try {
+            KarticeSeznam seznam = karticeSeznamZrno.pridobiKarticeSeznam(karticaSeznamId);
+            if (seznam == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("Card list with ID " + karticaSeznamId + " not found.")
+                        .build();
+            }
+            KarticaZrno karticaZrno = new KarticaZrno();
+            Kartica createdKartica = karticaZrno.dodajKartico(novaKartica, seznam);
+            return Response.status(Response.Status.CREATED).entity(createdKartica).build();
+        } catch (Exception e) {
+            log.severe("Error adding card to list with ID " + karticaSeznamId + ": " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
 
     @GET
     @Path("/{karticaSeznamId}/kartice")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Kartica> getKarticaSeznamKartice(@PathParam("karticaSeznamId") int karticaSeznamId) {
-        UpravljanjeKarticSeznamZrno upravljanjeKarticSeznamZrno = new UpravljanjeKarticSeznamZrno();
-        return upravljanjeKarticSeznamZrno.pridobiKarticeVSeznamu(karticaSeznamId);
+    public Response getKarticaSeznamKartice(@PathParam("karticaSeznamId") int karticaSeznamId) {
+        try {
+            List<Kartica> kartice = upravljanjeKarticSeznamZrno.pridobiKarticeVSeznamu(karticaSeznamId);
+            if (kartice.isEmpty()) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No cards found in the card list with ID " + karticaSeznamId)
+                        .build();
+            }
+            return Response.ok(kartice).build();
+        } catch (Exception e) {
+            log.severe("Error retrieving cards for list with ID " + karticaSeznamId + ": " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Internal server error: " + e.getMessage())
+                    .build();
+        }
     }
-
-
-
-    @PUT
-    @Path("/{karticaSeznamId}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public KarticeSeznam putKarticaSeznam(@PathParam("karticaSeznamId")Integer karticeSeznamId, KarticeSeznam novSeznam) {
-        UpravljanjeKarticSeznamZrno upravljanjeKarticSeznamZrno = new UpravljanjeKarticSeznamZrno();
-        return upravljanjeKarticSeznamZrno.ustvariKarticeSeznam(novSeznam);
-    }
-
-
 }

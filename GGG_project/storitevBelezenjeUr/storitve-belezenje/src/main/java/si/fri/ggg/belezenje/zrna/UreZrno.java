@@ -18,6 +18,161 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.logging.Logger;
 
+@ApplicationScoped
+public class UreZrno {
+
+    private Logger log = Logger.getLogger(UreZrno.class.getName());
+
+    @PostConstruct
+    private void init() {
+        log.info("Inicializacija zrna " + UreZrno.class.getSimpleName());
+        if (em == null) {
+            log.severe("EntityManager is null! Injection failed.");
+        } else {
+            log.info("EntityManager injected successfully.");
+        }
+    }
+
+    @PreDestroy
+    private void destroy() {
+        log.info("Deinicializacija zrna " + UreZrno.class.getSimpleName());
+    }
+
+    private EntityManagerFactory emf;
+    private EntityManager em;
+
+    public UreZrno() {
+        try {
+            emf = Persistence.createEntityManagerFactory("storitevbelezenje-jpa");
+            em = emf.createEntityManager();
+        } catch (Exception e) {
+            log.severe("Error initializing EntityManager: " + e.getMessage());
+            throw new RuntimeException("Error initializing EntityManager", e);
+        }
+    }
+
+    @Transactional
+    public Ure dodajUro(Ure novaUra, UreSeznam seznam) {
+        try {
+            if (seznam == null) {
+                throw new IllegalArgumentException("UreSeznam not found.");
+            }
+            novaUra.setUreSeznam(seznam);
+            seznam.getUre().add(novaUra);
+
+            em.getTransaction().begin();
+            em.persist(novaUra);
+            em.merge(seznam);
+            em.flush();
+            em.getTransaction().commit();
+            return novaUra;
+        } catch (Exception e) {
+            log.severe("Error adding Ure: " + e.getMessage());
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw new RuntimeException("Error adding Ure", e);
+        }
+    }
+
+    @Transactional
+    public boolean odstraniUro(int ureId) {
+        try {
+            Ure ure = em.find(Ure.class, ureId);
+            if (ure != null) {
+                em.getTransaction().begin();
+                em.remove(ure);
+                em.flush();
+                em.getTransaction().commit();
+                log.info("Ure with ID: " + ureId + " removed.");
+                return true;
+            } else {
+                log.warning("Ure with ID " + ureId + " not found.");
+                return false;
+            }
+        } catch (Exception e) {
+            log.severe("Error removing Ure with ID " + ureId + ": " + e.getMessage());
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw new RuntimeException("Error removing Ure with ID " + ureId, e);
+        }
+    }
+
+    @Transactional
+    public Ure urediUro(int uraId, Ure ure) {
+        try {
+            Ure obstojecaUra = em.find(Ure.class, uraId);
+            if (obstojecaUra != null) {
+                obstojecaUra.setVnosiUr(ure.getVnosiUr());
+                obstojecaUra.setVnosiMin(ure.getVnosiMin());
+                em.getTransaction().begin();
+                Ure novaUra = em.merge(obstojecaUra);
+                em.flush();
+                em.getTransaction().commit();
+                log.info("UreSeznam with ID: " + uraId + " updated.");
+                return novaUra;
+            } else {
+                log.warning("Ura with ID " + uraId + " not found.");
+                throw new IllegalArgumentException("Ura with ID: " + uraId + " not found.");
+            }
+        } catch (Exception e) {
+            log.severe("Error updating Ure with ID " + uraId + ": " + e.getMessage());
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            throw new RuntimeException("Error updating Ure with ID " + uraId, e);
+        }
+    }
+
+    @Transactional
+    public Ure pridobiUro(int uraId) {
+        try {
+            Ure ure = em.find(Ure.class, uraId);
+            if (ure == null) {
+                log.warning("Ura with ID " + uraId + " not found.");
+                throw new IllegalArgumentException("Ura with ID " + uraId + " not found.");
+            }
+            return ure;
+        } catch (Exception e) {
+            log.severe("Error retrieving Ure with ID " + uraId + ": " + e.getMessage());
+            throw new RuntimeException("Error retrieving Ure with ID " + uraId, e);
+        }
+    }
+
+    @Transactional
+    public List<Ure> pridobiVseUre() {
+        try {
+            if (em == null) {
+                log.severe("EntityManager is null!");
+                throw new RuntimeException("EntityManager is null!");
+            }
+            List<Ure> ure = em.createQuery("SELECT u FROM Ure u", Ure.class).getResultList();
+            return ure;
+        } catch (Exception e) {
+            log.severe("Error retrieving all Ure: " + e.getMessage());
+            throw new RuntimeException("Error retrieving all Ure", e);
+        }
+    }
+}
+
+/*package si.fri.ggg.belezenje.zrna;
+
+import si.fri.ggg.belezenje.dtos.UreDto;
+import si.fri.ggg.belezenje.entitete.Ure;
+import si.fri.ggg.belezenje.entitete.UreSeznam;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.enterprise.context.ApplicationScoped;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.logging.Logger;
+
 
 @ApplicationScoped
 public class UreZrno {
@@ -52,7 +207,7 @@ public class UreZrno {
 
     /*@PersistenceContext
     private EntityManager em;*/
-
+/*
     @Transactional
     public Ure dodajUro(Ure novaUra, UreSeznam seznam) {
         if(seznam == null){
@@ -154,3 +309,4 @@ public class UreZrno {
     }*/
 
 }
+*/
