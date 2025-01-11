@@ -1,0 +1,40 @@
+version: '3'
+services:
+  postgres2:
+    image: postgres:latest
+    container_name: uporabnikiDatabase
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: passwd
+      POSTGRES_DB: uporabniki_database
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - uporabniki
+
+  storitevKartice:
+    container_name: uporabnikiContainer
+    image: ggg_project-storitevuporabniki
+    build: .
+    #volumes:
+    #  - .:/app  # Maps the current directory to /app in the container
+    #       build: ./service1
+    depends_on:
+      - postgres2
+    ports:
+      - "8082:8080"
+    networks:
+      - uporabniki
+
+volumes:
+  postgres_data:
+
+networks:
+  uporabniki:
+#    driver: bridge
