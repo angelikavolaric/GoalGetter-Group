@@ -93,6 +93,14 @@ public class BelezenjeViri {
 
 
 
+   /* @GET
+    @Path("/{uporabnikId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Ure> getVseUreUporabnika(@PathParam("uporabnikId") int uporabnikId) {
+        UreZrno ureZrno = new UreZrno();
+        return ureZrno.pridobiVseUreUporabnika();
+    }*/
+
 
 
 

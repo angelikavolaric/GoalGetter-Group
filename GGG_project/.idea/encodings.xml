@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/StoritevKartice/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/StoritevKartice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/api-belezenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/api-belezenje/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/entitete-belezenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/entitete-belezenje/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/entitete/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/entitete/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/storitve-belezenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/storitve-belezenje/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/storitve/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevBelezenjeUr/storitve/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/api-deljenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/api-deljenje/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/entitete-deljenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/entitete-deljenje/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/storitve-deljenje/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevDeljenje/storitve-deljenje/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/api-kartice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/api-kartice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/entitete-kartice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/entitete-kartice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/entitete/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/entitete/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/storitve-kartice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevKartice/storitve-kartice/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/storitve/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/storitevKartice/storitve/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/api-uporabniki/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/api-uporabniki/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/entitete-uporabniki/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/entitete-uporabniki/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/storitve-uporabniki/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storitevUporabniki/storitve-uporabniki/src/main/resources" charset="UTF-8" />
   </component>
 </project>

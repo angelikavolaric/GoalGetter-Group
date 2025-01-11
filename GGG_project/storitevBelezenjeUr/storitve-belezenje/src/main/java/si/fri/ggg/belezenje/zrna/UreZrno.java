@@ -1,5 +1,9 @@
 package si.fri.ggg.belezenje.zrna;
 
+
+//import com.kumuluz.ee.rest.client.RestClient;
+//import com.kumuluz.ee.rest.client.RestClientResponse;
+import si.fri.ggg.belezenje.dtos.UporabnikDto;
 import si.fri.ggg.belezenje.dtos.UreDto;
 import si.fri.ggg.belezenje.entitete.Ure;
 import si.fri.ggg.belezenje.entitete.UreSeznam;
@@ -7,11 +11,10 @@ import si.fri.ggg.belezenje.entitete.UreSeznam;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.enterprise.context.ApplicationScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
+import javax.inject.Inject;
+import javax.persistence.*;
 import javax.transaction.Transactional;
+import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -114,5 +117,40 @@ public class UreZrno {
         List<Ure> ure = em.createQuery("SELECT u FROM Ure u", Ure.class).getResultList();
         return ure;
     }
+
+
+
+    /*private final String uporabnikStoritevUrl = "http://localhost:8080/v1/uporabniki/";
+    @Inject
+    private RestClient restClient; // Inject RestClient to make HTTP requests
+
+    public UporabnikDto getUporabnikById(Integer uporabnikId) {
+        // Build the URL for the API endpoint
+        String url = uporabnikStoritevUrl + uporabnikId;
+
+        // Make the GET request
+        try {
+            RestClientResponse response = restClient.get(url);
+        }
+
+        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+            // Deserialize response to Uporabnik object
+            return response.readEntity(Uporabnik.class);
+        } else {
+            // Handle error, for example, throw exception or return null
+            throw new RuntimeException("Failed to fetch user data from User service.");
+        }
+    }
+
+    @Transactional
+    public List<Ure> pridobiVseUreUporabnika(Integer userId){
+        if (em == null){
+            log.severe("EntityManager is null!");
+        }
+        String jpql = "SELECT u FROM Ure u WHERE u.uporabnikId = :userId";
+        TypedQuery<Ure> query = em.createQuery(jpql, Ure.class);
+        query.setParameter("userId", userId);
+        return query.getResultList();
+    }*/
 
 }
