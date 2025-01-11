@@ -8,20 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistance.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/src/main/java/si/fri/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeSeznamViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeSeznamViri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UpravljanjeSeznamovUr.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UpravljanjeSeznamovUr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreSeznamZrna.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreSeznamZrna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticaVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticaVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/Uporabnik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticaZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticeSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/KarticeSeznamZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/java/si/fri/ggg/uporabniki/api/v1/viri/UporabnikVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/java/si/fri/ggg/uporabniki/api/v1/viri/UporabnikVir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UpravljanjeUporabnikovZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UpravljanjeUporabnikovZrno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,7 @@
   "keyToString": {
     "Maven.goalgettergroup [clean].executor": "Run",
     "Maven.goalgettergroup [install].executor": "Run",
+    "Maven.goalgettergroup [package].executor": "Run",
     "Maven.storitevKartice [clean].executor": "Run",
     "Maven.storitevKartice [install].executor": "Run",
     "Maven.storitevKartice [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
@@ -131,7 +133,7 @@
       <workItem from="1735550161150" duration="138502000" />
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
-      <workItem from="1736511629878" duration="26597000" />
+      <workItem from="1736511629878" duration="29664000" />
     </task>
     <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
       <option name="closed" value="true" />
@@ -168,13 +170,32 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1736608162347</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736611402151</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1736611402152</updated>
+    </task>
+    <task id="LOCAL−00007" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736611429461</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1736611429461</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="d7b70a28-17df-441f-b9fa-1892f69d89f8" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -192,6 +213,11 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+        <entry key="d7b70a28-17df-441f-b9fa-1892f69d89f8">
+          <value>
+            <State />
           </value>
         </entry>
       </map>

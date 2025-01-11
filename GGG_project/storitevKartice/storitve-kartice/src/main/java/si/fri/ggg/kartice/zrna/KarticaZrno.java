@@ -37,50 +37,19 @@ public class KarticaZrno {
         log.info("Deinicializacija zrna " + KarticaZrno.class.getSimpleName());
         // cleanup resources if needed
     }
-////
+
     private EntityManagerFactory emf;
     private EntityManager em;
-    //@PersistenceContext(unitName = "storitevkartice-jpa")
-    //private EntityManager em;
 
     public KarticaZrno() {
-        // Initialize the EntityManagerFactory and EntityManager
-        emf = Persistence.createEntityManagerFactory("storitevkartice-jpa");
-        em = emf.createEntityManager();
+        try {
+            emf = Persistence.createEntityManagerFactory("storitevkartice-jpa");
+            em = emf.createEntityManager();
+        } catch (Exception e) {
+            log.severe("Error initializing EntityManager: " + e.getMessage());
+            throw new RuntimeException("Error initializing EntityManager", e);
+        }
     }
-    ////
-
-
-    /*@Transactional
-    public Kartica dodajKartico(Kartica novaKartica, KarticeSeznam seznam) {
-        log.info("seznam V dodajanje " + seznam);
-        if (seznam == null) {
-            throw new IllegalArgumentException("KarticeSeznam not found.");
-        }
-        novaKartica.setKarticeSeznam(seznam);
-        log.info("karticasezn " + novaKartica.getKarticeSeznam());
-
-        em.getTransaction().begin();
-        em.persist(novaKartica);  // Persisting a new Kartica entity
-        em.flush();
-        em.getTransaction().commit();
-        log.info("Kartica created with ID : " + novaKartica.getId());
-        //seznam.putKartice(novaKartica);
-        log.info("kartice " + seznam.getKartice());
-        seznam.putKartice(novaKartica);
-        log.info("kartice " + seznam.getKartice());
-        return novaKartica;       // Return the persisted entity
-    }*/
-
-   /* public Kartica dodajKartico(Kartica novaKartica, KarticeSeznam seznam) {
-        if (seznam == null) {
-            throw new IllegalArgumentException("KarticeSeznam not found.");
-        }
-        novaKartica.setKarticeSeznam(seznam);
-        seznam.putKartice(novaKartica);  // Add to the list
-        em.persist(novaKartica);  // Persist the Kartica entity
-        return novaKartica;  // Return the persisted entity
-    }*/
 
     @Transactional
     public Kartica dodajKartico(Kartica novaKartica, KarticeSeznam seznam) {

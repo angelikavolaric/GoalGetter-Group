@@ -29,15 +29,13 @@ public class UporabnikZrno {
         } else {
             log.info("EntityManager injected successfully.");
         }
-        // initialize resources if needed
     }
 
     @PreDestroy
     private void destroy() {
         log.info("Deinicializacija zrna " + UporabnikZrno.class.getSimpleName());
-        // cleanup resources if needed
+
     }
-    // EntityManager and EntityManagerFactory
     private EntityManagerFactory emf;
     private EntityManager em;
 
@@ -92,33 +90,60 @@ public class UporabnikZrno {
         }
     }
 
+    /*@Transactional
+    public Uporabnik urediUporabnika(int uporabnikId, Uporabnik uporabnik) {
+        Uporabnik existingUporabnik = em.find(Uporabnik.class, uporabnikId);
+        if (existingUporabnik != null) {
+            // Update existing Uporabnik entity
+            existingUporabnik.setIme(uporabnik.getIme());
+            existingUporabnik.setPriimek(uporabnik.getPriimek());
+            existingUporabnik.setUporabniskoIme(uporabnik.getUporabniskoIme());
+            existingUporabnik.setEmail(uporabnik.getEmail());
+            em.getTransaction().begin();
+            Uporabnik posodUporabnik = em.merge(existingUporabnik);  // Merge the updated Uporabnik entity
+            em.flush();
+            em.getTransaction().commit();
+            log.info("UporabnikiSeznam with ID : " + uporabnikId + " updated");
+            return posodUporabnik;
+        }
+        throw new IllegalArgumentException("Uporabnik with ID " + uporabnikId + " not found.");
+        //return null;  // Return null if Uporabnik with the given ID is not found
+    }*/
+
     @Transactional
     public Uporabnik urediUporabnika(int uporabnikId, Uporabnik uporabnik) {
         try {
+            // Attempt to find the user by ID
             Uporabnik existingUporabnik = em.find(Uporabnik.class, uporabnikId);
+
+            // If the user exists, update their details
             if (existingUporabnik != null) {
                 existingUporabnik.setIme(uporabnik.getIme());
                 existingUporabnik.setPriimek(uporabnik.getPriimek());
                 existingUporabnik.setUporabniskoIme(uporabnik.getUporabniskoIme());
                 existingUporabnik.setEmail(uporabnik.getEmail());
+
                 em.getTransaction().begin();
-                Uporabnik posodUporabnik = em.merge(existingUporabnik);
+                Uporabnik posodUporabnik = em.merge(existingUporabnik);  // Merge the updated Uporabnik entity
                 em.flush();
                 em.getTransaction().commit();
-                log.info("Uporabnik with ID : " + uporabnikId + " updated");
+
+                log.info("Uporabnik with ID : " + uporabnikId + " updated successfully.");
                 return posodUporabnik;
             } else {
                 log.warning("User with ID " + uporabnikId + " not found.");
                 throw new IllegalArgumentException("Uporabnik with ID " + uporabnikId + " not found.");
             }
         } catch (Exception e) {
-            log.severe("Error updating user: " + e.getMessage());
+
+            log.severe("Error updating user with ID " + uporabnikId + ": " + e.getMessage());
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
             throw new RuntimeException("Error updating user with ID " + uporabnikId, e);
         }
     }
+
 
     @Transactional
     public Uporabnik pridobiUporabnika(int uporabnikId) {
@@ -151,7 +176,6 @@ public class UporabnikZrno {
         }
     }
 }
-
 
 /*package si.fri.ggg.uporabniki.zrna;
 
