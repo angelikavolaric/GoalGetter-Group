@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: passwd
       POSTGRES_DB: kartice_database
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       #- ./entitete-kartice/src/main/resources/sql-scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
@@ -23,13 +23,10 @@ services:
     container_name: karticeContainer
     image: ggg_project-storitevkartice
     build: .
-    #volumes:
-    #  - .:/app  # Maps the current directory to /app in the container
-    #       build: ./service1
     depends_on:
       - postgres
     ports:
-      - "8080:8080"
+      - "8081:8080"
     networks:
       - kartice
 
@@ -37,5 +34,5 @@ volumes:
   postgres_data:
 
 networks:
- kartice:
+  kartice:
 #    driver: bridge

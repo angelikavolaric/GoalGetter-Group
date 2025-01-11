@@ -10,7 +10,7 @@
         <class>si.fri.ggg.kartice.pretvorniki.InstantPretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/kartice_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://karticeDatabase:5432/kartice_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
