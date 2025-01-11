@@ -8,23 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/Obvestila.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaStoritve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/ObvestilaViri.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/ObvestilaExternalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/viri/ObvestilaExternalVir.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/servleti/JPAServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/entitete-kartice/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/entitete-kartice/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/storitve-uporabniki/src/main/java/si/fri/ggg/uporabniki/zrna/UporabnikZrno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,42 +42,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.goalgettergroup [clean].executor": "Run",
-    "Maven.goalgettergroup [install].executor": "Run",
-    "Maven.storitevKartice [clean].executor": "Run",
-    "Maven.storitevKartice [install].executor": "Run",
-    "Maven.storitevKartice [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
-    "Maven.storitevKartice [package].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "C:\\Users\\volar\\Sola\\FRI\\3. letnik\\prpo\\GoalGetter-Group\\GGG_project\\frontend\\goalgettergroup\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.goalgettergroup [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.goalgettergroup [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.storitevKartice [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.storitevKartice [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.storitevKartice [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.storitevKartice [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\volar\\Sola\\FRI\\3. letnik\\prpo\\GoalGetter-Group\\GGG_project\\frontend\\goalgettergroup\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory",
-      "module"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;
     ],
-    "DatabaseDriversLRU": [
-      "postgresql"
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project" />
@@ -100,11 +87,11 @@
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\entitete-kartice\resources\sql-scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\." />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -131,7 +118,7 @@
       <workItem from="1735550161150" duration="138502000" />
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
-      <workItem from="1736511629878" duration="18317000" />
+      <workItem from="1736511629878" duration="23316000" />
     </task>
     <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
       <option name="closed" value="true" />
@@ -154,7 +141,14 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1736550136267</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736550352133</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1736550352133</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
