@@ -3,6 +3,7 @@
     <persistence-unit name="storitevdeljenje-jpa">
         <!--jta-data-source>jdbc/KarticeDS</jta-data-source-->
         <!--jta-data-source>java:GoalGetterGroupDS</jta-data-source-->
+        <jta-data-source>jdbc/GoalGetterGroupDS</jta-data-source>
         <class>si.fri.ggg.deljenje.entitete.Cilj</class>
         <class>si.fri.ggg.deljenje.pretvorniki.InstantPretvornik</class>
 

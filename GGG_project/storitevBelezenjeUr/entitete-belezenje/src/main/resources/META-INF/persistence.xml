@@ -7,7 +7,7 @@
         <class>si.fri.ggg.belezenje.pretvorniki.Pretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/goalgettergroup_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://belezenjeDatabase:5432/belezenje_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
 

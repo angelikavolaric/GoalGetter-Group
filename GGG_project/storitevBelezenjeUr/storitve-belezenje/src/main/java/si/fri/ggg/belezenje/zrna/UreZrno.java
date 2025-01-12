@@ -307,6 +307,3 @@ public class UreZrno {
         query.setParameter("userId", userId);
         return query.getResultList();
     }*/
-
-}
-*/
