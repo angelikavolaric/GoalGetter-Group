@@ -306,4 +306,7 @@ public class UreZrno {
         TypedQuery<Ure> query = em.createQuery(jpql, Ure.class);
         query.setParameter("userId", userId);
         return query.getResultList();
-    }*/
+    }*
+
+}
+*/

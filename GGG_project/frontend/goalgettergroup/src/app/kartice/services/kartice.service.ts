@@ -11,7 +11,7 @@ import { Kartica } from '../models/kartica';
 export class KarticeService {
 
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
-  private url = 'http://localhost:8080/v1/seznami';
+  private url = 'http://localhost:8081/v1/seznamiKartic';
 
   constructor(private http: HttpClient) {
   }
@@ -27,13 +27,13 @@ export class KarticeService {
       .pipe(catchError(this.handleError));
   }
 
-  delete(id: number): Observable<number> {
+  deleteSeznam(id: number): Observable<number> {
     const url = `${this.url}/${id}`;
     return this.http.delete<number>(url, {headers: this.headers})
       .pipe(catchError(this.handleError));
   }
 
-  create(seznamId: number, artikel: Kartica): Observable<Kartica> {
+  createSeznam(seznamId: number, artikel: Kartica): Observable<Kartica> {
     return this.http.post<Kartica>(this.url + '/' + seznamId + '/kartice', JSON.stringify(artikel), {headers: this.headers})
       .pipe(catchError(this.handleError));
   }
