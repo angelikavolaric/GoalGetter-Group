@@ -8,27 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/api-sporocila/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/entitete-sporocila/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/storitve-sporocila/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.htm" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/kartica.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/kartica.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/karticeSeznam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/karticeSeznam.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/db/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/java/si/fri/ggg/deljenje/entitete/Cilj.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/java/si/fri/ggg/deljenje/entitete/Cilj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/src/main/java/si/fri/deljenje/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +64,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project/storitevBelezenjeUr/db",
+    "last_opened_file_path": "C:/Users/katja/PRPO/Projekt/GoalGetter-Group/GGG_project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,6 +129,7 @@
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
       <workItem from="1736511629878" duration="38334000" />
+      <workItem from="1736699658801" duration="7307000" />
     </task>
     <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
       <option name="closed" value="true" />
