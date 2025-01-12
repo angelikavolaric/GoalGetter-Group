@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="storitevdeljenje-jpa">
+    <persistence-unit name="storitevtimer-jpa">
         <!--jta-data-source>jdbc/KarticeDS</jta-data-source-->
         <!--jta-data-source>java:GoalGetterGroupDS</jta-data-source-->
-        <jta-data-source>jdbc/GoalGetterGroupDS</jta-data-source>
-        <class>si.fri.ggg.deljenje.entitete.Cilj</class>
-        <class>si.fri.ggg.deljenje.pretvorniki.InstantPretvornik</class>
+        <class>si.fri.ggg.timer.entitete.TimerEnt</class>
+        <class>si.fri.ggg.timer.pretvorniki.InstantPretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://deljenjeDatabase:5432/deljenje_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://timerDatabase:5432/timer_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

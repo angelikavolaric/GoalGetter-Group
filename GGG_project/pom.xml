@@ -12,6 +12,7 @@
         <module>storitevKartice</module>
         <module>storitevUporabniki</module>
         <module>storitevDeljenje</module>
+        <module>storitevTimer</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
