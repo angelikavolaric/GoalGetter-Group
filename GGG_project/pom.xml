@@ -11,7 +11,6 @@
         <module>storitevBelezenjeUr</module>
         <module>storitevKartice</module>
         <module>storitevUporabniki</module>
-        <!--module>storitevUporabniskiRacun</module-->
         <module>storitevDeljenje</module>
     </modules>
     <properties>

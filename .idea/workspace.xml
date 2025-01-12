@@ -8,27 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.htm" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.htm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/kartica.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/kartica.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/karticeSeznam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/models/karticeSeznam.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/db/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/java/si/fri/ggg/deljenje/entitete/Cilj.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/java/si/fri/ggg/deljenje/entitete/Cilj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/entitete-deljenje/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/src/main/java/si/fri/deljenje/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/api-deljenje/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/api-deljenje/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project/storitevBelezenjeUr/db",
+    "last_opened_file_path": "C:/Users/volar/Sola/FRI/3. letnik/prpo/GoalGetter-Group/GGG_project/frontend/goalgettergroup/src/app/kartice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,18 +101,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevBelezenjeUr\db" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\frontend\goalgettergroup\src\app\kartice" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\frontend\goalgettergroup\src\app" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevBelezenjeUr\db" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki\db\sql-scripts" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevUporabniki" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\db" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevKartice\zb" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\frontend\goalgettergroup\src" />
       <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\" />
-      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevObvestila\storitve-obvestila\src\main\java\si\fri\ggg\kartice" />
+      <recent name="C:\Users\volar\Sola\FRI\3. letnik\prpo\GoalGetter-Group\GGG_project\storitevObvestila\api-obvestila\src\main\java\si\fri\ggg\obvestila" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -139,7 +139,7 @@
       <workItem from="1735550161150" duration="138502000" />
       <workItem from="1736509869637" duration="789000" />
       <workItem from="1736510684585" duration="551000" />
-      <workItem from="1736511629878" duration="38334000" />
+      <workItem from="1736511629878" duration="59103000" />
     </task>
     <task id="LOCAL−00001" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
       <option name="closed" value="true" />
@@ -190,7 +190,14 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1736611429461</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736635063540</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1736635063541</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
