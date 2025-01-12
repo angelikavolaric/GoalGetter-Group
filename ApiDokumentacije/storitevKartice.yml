@@ -1,0 +1,309 @@
+openapi: 3.0.0
+servers:
+  - description: "Development server"
+    url: http://localhost:8080/v1
+info:
+  description: "Mikrostoritev za ustvarjanje kartic za učenje. Uporabnik lahko doda, posodobi ali odstrani svoje kartice ter jih ureja v sezname."
+  version: "1.0.0-SNAPSHOT"
+  title: "API za storitev kartice"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Kartice
+    description: "Operacije za manipulacijo kartic uporabnika"
+  - name: KarticeSeznami
+    description: "Operacije za manipulacijo seznamov kartic uporabnika"
+paths:
+  /kartice:
+    get:
+      tags:
+        - Kartice
+      summary: "vrne vse vnose kartic"
+      operationId: pridobiVseKartice
+      description: "Vrne vse obstoječe kartice na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of learning cards"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Kartice'
+    post:
+      tags:
+        - Kartice
+      summary: "ustvari novo kartico"
+      operationId: ustvariKartico
+      description: "Ustvari novo kartico in jo doda na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: card already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kartice'
+        description: "Primer kartice, ki jo bomo dodali"
+  '/kartice/{karticeId}':
+    get:
+      tags:
+        - Kartice
+      summary: "vrne zahtevano kartico"
+      operationId: pridobiKartico
+      description: "Vrne zahtevano kartico iz podatkovne baze"
+      parameters:
+        - name: karticeId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID kartice, katero lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK - specified card"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kartice'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Card not found" }
+    put:
+      tags:
+        - Kartice
+      summary: "posodobi zahtevano kartico"
+      operationId: posodobiKartico
+      description: "Posodobi zahtevano kartico na podatkovni bazi"
+      parameters:
+        - name: karticeId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID kartice, katero lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK - updated card"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Card not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Kartice'
+        description: "Primer kartice, katero bomo posodobili"
+    delete:
+      tags:
+        - Kartice
+      summary: "odstrani zahtevano kartico"
+      operationId: odstraniUre
+      description: "Odstrani zahtevan vnos ure iz podatkovne baze"
+      parameters:
+        - name: karticeId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID kartice, katero lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - card was deleted successfully"
+        '404':
+          description: "Not found - the card with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Card not found" }
+  /seznamUr:
+    get:
+      tags:
+        - KarticeSeznami
+      summary: "vrne vse sezname kartic"
+      operationId: pridobiVseSeznameKartic
+      description: "Vrne vse sezname kartic na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of lists of cards"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SeznamKartic'
+    post:
+      tags:
+        - KarticeSeznami
+      summary: "ustvari nov seznam kartic"
+      operationId: ustvariSeznamKartic
+      description: "Doda nov seznam kartic na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: card already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeznamKartic'
+        description: "Primer seznama, ki ga bomo dodali"
+  '/seznamUr/{karticeSeznamId}':
+    get:
+      tags:
+        - KarticeSeznami
+      summary: "vrne zahtevan seznam kartic"
+      operationId: pridobiSeznamKartic
+      description: "Vrne zahtevan seznam kartic iz podatkovne baze"
+      parameters:
+        - name: karticeSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama kartic, katerega lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeznamKartic'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "List not found" }
+    put:
+      tags:
+        - KarticeSeznami
+      summary: "posodobi zahtevan seznam kartic"
+      operationId: posodobiSeznamKartic
+      description: "Posodobi zahtevan seznam kartic na podatkovni bazi"
+      parameters:
+        - name: karticeSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama kartic, katerega lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "List not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeznamKartic'
+        description: "Primer seznama, ki ga bomo posodobili"
+    delete:
+      tags:
+        - KarticeSeznami
+      summary: "odstrani zahtevan seznam kartic"
+      operationId: odstraniSeznamKartic
+      description: "Odstrani zahtevan seznam kartic iz podatkovne baze"
+      parameters:
+        - name: karticeSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama kartic, katerega lahko pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - list was deleted successfully"
+        '404':
+          description: "Not found - the list with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "List not found" }
+
+components:
+  schemas:
+    Kartice:
+      type: object
+      required:
+        - id
+        - vprasanje
+        - odgovor
+        - karticeSeznamId
+      properties:
+        id:
+          type: integer
+          example: 12
+        vprasanje:
+          type: string
+          example: 'Kaj pomeni PRPO'
+        odgovor:
+          type: string
+          example: 'Postopki razvoja programske opreme'
+        karticeSeznamId:
+          type: integer
+          example: 321
+    SeznamKartic:
+      type: object
+      required:
+        - id
+        - predmet
+        - opis
+        - ustvarjen
+        - uporabnikId
+      properties:
+        id:
+          type: integer
+          example: 321
+        opis:
+          type: string
+          example: "1. semester, 1. letnik"
+        predmet:
+          type: string
+          example: "DS"
+        ustvarjen:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        uporabnikId:
+          type: integer
+          example: 1
