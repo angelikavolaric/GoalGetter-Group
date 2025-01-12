@@ -3,6 +3,11 @@ kumuluzee:
   version: 1.0.0
   env:
     name: dev
+  cors:
+    enabled: true
+    origins: "http://localhost:4200"  # Allow requests from Angular frontend
+    methods: "GET, POST, PUT, DELETE, OPTIONS"
+    headers: "Content-Type, Authorization, X-Requested-With"
   #datasources:
   #  - jndi-name: jdbc/GoalGetterGroupDS
   #    connection-url: jdbc:postgresql://localhost:5432/goalgettergroup

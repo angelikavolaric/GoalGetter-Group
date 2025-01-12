@@ -20,6 +20,11 @@ export class KarticeService {
     return this.http.get<KarticeSeznam[]>(this.url)
       .pipe(catchError(this.handleError));
   }
+  updateSeznam(seznamId: number, seznam: KarticeSeznam): Observable<KarticeSeznam> {
+    const url = `${this.url}/${seznamId}`;
+    return this.http.put<KarticeSeznam>(url, JSON.stringify(seznam), { headers: this.headers })
+      .pipe(catchError(this.handleError));
+  }
 
   getSeznam(id: number): Observable<KarticeSeznam> {
     const url = `${this.url}/${id}`;

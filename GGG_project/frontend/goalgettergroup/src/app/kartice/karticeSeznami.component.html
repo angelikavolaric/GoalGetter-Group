@@ -1,0 +1,68 @@
+<div *ngIf="urlId === ''">
+  <h2>Seznami kartic</h2>
+  <ul>
+    <li *ngFor="let seznam of seznami">
+      <h3>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen }} | {{ seznam.kartice }}</h3>
+      <button [routerLink]="['/karticeSeznam', seznam.id]">Edit</button>
+      <button (click)="deleteSeznam(seznam)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<!-- Display details for the selected Seznam -->
+<div *ngIf="urlId !== ''">
+  <h3>Edit Seznam</h3>
+  <div *ngIf="seznam">
+    <p>{{ seznam?.id }} | {{ seznam?.predmet }} | {{ seznam?.opis }} | {{ seznam?.ustvarjen }} | {{ seznam?.kartice }}</p>
+    <button (click)="deleteSeznam(seznam)">Izbriši</button>
+  </div>
+
+  <!-- Form for editing Seznam -->
+  <div *ngIf="seznam">
+    <form (ngSubmit)="updateSeznam(seznam)">
+      <label for="predmet">Predmet:</label>
+      <input id="predmet" [(ngModel)]="seznam.predmet" name="predmet" required />
+
+      <label for="opis">Opis:</label>
+      <input id="opis" [(ngModel)]="seznam.opis" name="opis" required />
+
+      <label for="ustvarjen">Ustvarjen:</label>
+      <input id="ustvarjen" [(ngModel)]="seznam.ustvarjen" name="ustvarjen" required />
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+<!--div *ngIf="urlId !== ''">
+  <h3>Edit Kartica</h3>
+
+  <div *ngIf="kartica">
+    <p>{{ kartica?.id }} | {{ kartica?.vprasanje }} | {{ kartica?.odgovor }} | {{ kartica?.karticeSeznamId }}</p>
+    <button (click)="deleteKartica(kartica)">Izbriši</button>
+  </div>
+
+
+  <div *ngIf="kartica">
+    <form (ngSubmit)="updateKartica(kartica)">
+      <label for="vprasanje">Vprasanje:</label>
+      <input id="vprasanje" [(ngModel)]="kartica.vprasanje" name="vprasanje" required />
+
+      <label for="odgovor">Odgovor:</label>
+      <input id="odgovor" [(ngModel)]="seznam.odgovor" name="odgovor" required />
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+
+
+<div *ngIf="urlId === ''">
+  <ul>
+    <li *ngFor="let seznam of seznami">
+      <h3>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen}} | | {{ seznam.kartice }}</h3>
+      <button [routerLink]="['/karticeSeznam', seznam.id]">Edit</button>
+      <button (click)="deleteSeznam(seznam)">Delete</button>
+    </li>
+  </ul>
+</div>
+

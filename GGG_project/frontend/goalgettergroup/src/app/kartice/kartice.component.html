@@ -1,0 +1,58 @@
+<!-- src/app/kartice/kartica.component.html -->
+<!-- Display Kartica details with Edit and Delete buttons -->
+<div *ngIf="urlId !== ''">
+  <h3>Edit Kartica</h3>
+
+  <div *ngIf="kartica">
+    <p>{{ kartica?.id }} | {{ kartica?.vprasanje }} | {{ kartica?.odgovor }} | {{ kartica?.karticeSeznamId }}</p>
+    <button (click)="deleteKartica(kartica)">Izbriši</button>
+  </div>
+
+  <!-- Form for editing Kartica -->
+  <div *ngIf="kartica">
+    <form (ngSubmit)="updateKartica(kartica)">
+      <label for="vprasanje">Vprasanje:</label>
+      <input id="vprasanje" [(ngModel)]="kartica.vprasanje" name="vprasanje" required />
+
+      <label for="odgovor">Odgovor:</label>
+      <input id="odgovor" [(ngModel)]="kartica.odgovor" name="odgovor" required />
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+
+<!-- Display the list of kartice if URL doesn't match any specific kartica -->
+<div *ngIf="urlId === ''">
+  <ul>
+    <li *ngFor="let kartica of kartice">
+      <h3>{{ kartica.id }} | {{ kartica.vprasanje }} | {{ kartica.odgovor }}</h3>
+      <button [routerLink]="['/kartica', kartica.id]">Edit</button>
+      <button (click)="deleteKartica(kartica)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<!--h2>Seznami kartic</h2>
+
+<ul *ngIf="urlId == '' ">
+  <li *ngFor="let k of kartice" style="list-style-type: none;">
+    <a [routerLink]="['/kartica', k.id]">
+      {{ k.id }} |
+      {{ k.vprasanje }} |
+      {{ k.odgovor }}
+    </a>
+  </li>
+</ul>
+
+<div-- *ngIf="urlId != '' ">
+
+  {{ kartica?.id  }} |
+  {{ kartica?.vprasanje }} |
+  {{ kartica?.odgovor }} |
+  {{ kartica?.karticeSeznamId }}
+
+  <button (click)="updateKartica(kartica?)">Uredi</button>
+  <button>Izbriši</button>
+</div-->
+

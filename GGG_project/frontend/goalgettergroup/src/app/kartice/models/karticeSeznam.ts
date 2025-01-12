@@ -1,4 +1,13 @@
-import { Kartica } from './kartica';
+import {Kartica} from './kartica';
+
+export interface KarticeSeznam {
+  id: number;
+  predmet: string;
+  opis: string;
+  ustvarjen: Date;
+  kartice: Kartica[];}
+
+/*import { Kartica } from './kartica';
 
 export class KarticeSeznam {
   id: number;
@@ -14,5 +23,5 @@ export class KarticeSeznam {
     this.ustvarjen = ustvarjen;
     this.kartice = kartice;
   }
-}
+}*/
 
