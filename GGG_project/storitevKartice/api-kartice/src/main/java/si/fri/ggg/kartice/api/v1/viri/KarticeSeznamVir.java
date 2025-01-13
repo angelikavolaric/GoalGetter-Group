@@ -148,6 +148,7 @@ public class KarticeSeznamVir {
             }
             KarticaZrno karticaZrno = new KarticaZrno();
             Kartica createdKartica = karticaZrno.dodajKartico(novaKartica, seznam);
+            //createdKartica.setKarticeSeznam(seznam);
             return Response.status(Response.Status.CREATED).entity(createdKartica).build();
         } catch (Exception e) {
             log.severe("Error adding card to list with ID " + karticaSeznamId + ": " + e.getMessage());

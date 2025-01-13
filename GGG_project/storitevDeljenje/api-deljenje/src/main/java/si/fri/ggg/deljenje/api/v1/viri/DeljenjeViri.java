@@ -152,7 +152,7 @@ public class DeljenjeViri {
         }
     }
 
-    private static final String BASE_URL = "http://localhost:8083/v1/ure/napredekur";
+    private static final String BASE_URL = "http://localhost:8083/v1/ure/uporabnik/";
     @GET
     @Path("/napredek/{uporabnikId}")
     public Response getUre(@PathParam("uporabnikId") int uporabnikId){
