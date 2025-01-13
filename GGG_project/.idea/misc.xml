@@ -11,6 +11,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/StoritevKartice/pom.xml" />
+        <option value="$PROJECT_DIR$/storitevObvestila/pom.xml" />
       </set>
     </option>
   </component>
