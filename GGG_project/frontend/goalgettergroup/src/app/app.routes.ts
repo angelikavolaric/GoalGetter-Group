@@ -6,9 +6,10 @@ import { KarticeComponent } from './kartice/kartice.component';
 import {UporabnikiComponent} from './Uporabniki/uporabniki.component';
 import {DeljenjeComponent} from './deljenje/deljenje.component';
 import {CasovnikComponent} from './casovnik/casovnik.component';
+import {IndexComponent} from './index.component';
 
 export const routes: Routes = [
-  { path: '', component: KarticeSeznamiComponent },  // Set up the default route
+  { path: '', component: IndexComponent },  // Set up the default route
   { path: 'karticeSeznam', component: KarticeSeznamiComponent },
   { path: 'karticeSeznam/:id', component: KarticeSeznamiComponent },
   { path: 'kartice', component: KarticeComponent },

@@ -20,7 +20,7 @@ export class KarticeSeznamiComponent implements OnInit {
   seznam?: KarticeSeznam;  // Individual "kartice seznam" object
   urlId: string = "";
   kartice? : Kartica[] = [];
-  kartica?: Kartica;
+  kartica!: Kartica;
   novakartica? : Kartica;
   constructor(private karticeService: KarticeService, private router: Router, private route: ActivatedRoute,private karticaService: KarticaService,) {}
 
@@ -31,7 +31,7 @@ export class KarticeSeznamiComponent implements OnInit {
         this.getSeznami();
       } else {
         this.getSeznam(this.urlId)
-        this.getKartice(Number(this.urlId))
+
       }
     })
     this.getSeznami();  // Fetch the list of kartice seznams when the component is initialized
@@ -55,6 +55,7 @@ export class KarticeSeznamiComponent implements OnInit {
     this.karticeService.getSeznam(Number(this.urlId)).subscribe(
       (k) => {
         this.seznam = k;
+        this.getKartice(Number(this.urlId))
       },
       (error) => {
         console.error('Error fetching kartica:', error);
@@ -99,8 +100,8 @@ export class KarticeSeznamiComponent implements OnInit {
       })
   }
 
-  addKartica( seznamId: number, novakartica?: Kartica): void {
-
+  addKartica( seznamId: number, novakartica: Kartica): void {
+    console.log(novakartica)
     if(novakartica){
       novakartica.karticeSeznamId = seznamId;
       this.karticaService

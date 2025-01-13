@@ -18,12 +18,11 @@ public class ObvestilaEnt {
     @Column(name = "outerAPIid")
     private String outerAPIid;
 
-    @Column(name = "opis")
-    private String opis;
-    @Column(name = "zacetek")
-    private String zacetek;
-    @Column(name = "konec")
-    private String konec;
+    @Column(name = "zadeva")
+    private String zadeva;
+    @Column(name = "sporocilo")
+    private String sporocilo;
+
 
 
     public Integer getId() {
@@ -37,19 +36,13 @@ public class ObvestilaEnt {
     public void setOuterAPIid(String outerAPIid) {
         this.outerAPIid = outerAPIid;
     }
-    public String getOpis() {return opis;}
-    public void setOpis(String opis) {
-        this.opis = opis;
+    public String getZadeva() {return zadeva;}
+    public void setZadeva(String ozadeva) {
+        this.zadeva = zadeva;
     }
-    public String getZacetek() {return zacetek;}
-    public void setZacetek(String zacetek) {
-        this.zacetek = zacetek;
+    public String getSporocilo() {return sporocilo;}
+    public void setSporocilo(String sporocilo) {
+        this.sporocilo = sporocilo;
     }
-    public String getKonec() {return konec;}
-    public void setKonec(String konec) {
-        this.konec = konec;
-    }
-
-
 
 }

@@ -16,6 +16,14 @@ export class KarticeService {
   constructor(private http: HttpClient) {
   }
 
+  makePutRequest(data: any) {
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')  // Define custom headers
+      .set('Authorization', 'Bearer your-token');  // Example of another custom header if needed
+
+    return this.http.put(this.url, data, { headers: headers });
+  }
+
   getSeznami(): Observable<KarticeSeznam[]> {
     return this.http.get<KarticeSeznam[]>(this.url)
       .pipe(catchError(this.handleError));

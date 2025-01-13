@@ -16,9 +16,10 @@ import {CasovnikComponent} from './casovnik/casovnik.component';
       <ul>
         <li><a routerLink="/kartice">Kartica</a></li>
         <li><a routerLink="/karticeSeznami">Kartice Seznami</a></li>
-        <li><a routerLink="/uporabniki">Uporabniki Seznami</a></li>
+        <li><a routerLink="/uporabniki">Uporabniki</a></li>
         <li><a routerLink="/cilji">Cilji</a></li>
         <li><a routerLink="/casovnik">Casovnik</a></li>
+        <li><a routerLink="/obvestila">Obvestila</a></li>
       </ul>
     </nav>
       <router-outlet></router-outlet>

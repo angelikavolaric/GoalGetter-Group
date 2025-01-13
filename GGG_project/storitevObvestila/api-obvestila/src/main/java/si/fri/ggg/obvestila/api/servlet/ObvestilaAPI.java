@@ -18,8 +18,8 @@ import java.net.http.HttpResponse;
 public class ObvestilaAPI {
 
     // Constants for API authentication and endpoints
-    private static final String YOUR_APP_API_KEY = "os_v2_app_pxxxv73w5ndt7ksyadgehusej4cg3rk6azremyvmmgaspus2aqub43zgwgcprulzbqb7na4i5f74oviilccho62idlnbffhq7tmehta";
-    private static final String YOUR_APP_ID = "7def7aff-76eb-473f-aa58-00cc43d2444f";
+    private static final String YOUR_APP_API_KEY=dotenv.get("YOUR_APP_API_KEY");;
+    private static final String YOUR_APP_ID = dotenv.get("YOUR_APP_ID");
     private static final String CLOCKIFY_API_URL = "https://api.clockify.me/api/v1/workspaces/%s/time-entries";
 
     @Inject
@@ -60,16 +60,13 @@ public class ObvestilaAPI {
                 JsonNode jsonNode = objectMapper.readTree(response);
 
                 String apiId = jsonNode.get("id").asText();
-                String zac = jsonNode.get("start").asText();
-                String kon = jsonNode.get("end").asText();
 
                 ObvestilaEnt obvestilaEnt = new ObvestilaEnt();
-                obvestilaEnt.setOpis(sporocilo);
+                obvestilaEnt.setSporocilo(sporocilo);
                 obvestilaEnt.setOuterAPIid(apiId);
-                obvestilaEnt.setZacetek(zac);
-                obvestilaEnt.setKonec(kon);
+                obvestilaEnt.setZadeva(zadeva);
 
-                obvestilaViri.postObvestila(obvestilaEnt);
+                obvestilaViri.postObvestilo(obvestilaEnt);
 
                 return apiId;
             } else {
@@ -79,35 +76,6 @@ public class ObvestilaAPI {
         } catch (URISyntaxException | IOException | InterruptedException e) {
             throw new RuntimeException("Error in sendMessage", e);
         }
-    }
-
-    /**
-     * Method to get a specific time entry by its ID
-     *
-     * @param timeEntryId The ID of the time entry to retrieve
-     * @return The result of the time entry retrieval
-     */
-    public String getTimeEntry(String timeEntryId) {
-        return executeClockifyRequest("GET", timeEntryId, null);
-    }
-
-    /**
-     * Method to retrieve all time entries
-     *
-     * @return The result of retrieving all time entries
-     */
-    public String getAllTimeEntries() {
-        return executeClockifyRequest("GET", null, null);
-    }
-
-    /**
-     * Method to delete a specific time entry by its ID
-     *
-     * @param timeEntryId The ID of the time entry to delete
-     * @return The result of the deletion
-     */
-    public String deleteTimeEntry(String timeEntryId) {
-        return executeClockifyRequest("DELETE", timeEntryId, null);
     }
 
     /**

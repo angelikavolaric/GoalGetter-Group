@@ -120,9 +120,6 @@ public class ObvestilaViri {
                         .build();
             }
 
-            // Assuming you have a method to delete from the external API if needed.
-            String apiId = obvestiloEnt.getOuterAPIid();
-            obvestilaAPI.deleteTimeEntry(apiId);  // This should be implemented based on your API design.
 
             return Response.status(Response.Status.NO_CONTENT).build();
         } catch (Exception e) {

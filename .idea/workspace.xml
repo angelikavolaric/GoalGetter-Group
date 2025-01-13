@@ -8,35 +8,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/obvestila/zrna/ObvestilaZrna.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/obvestila/zrna/UpravljanjeObvestila.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/Uporabniki/services/uporabniki.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/Uporabniki/services/uporabniki.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/Uporabniki/uporabniki.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/Uporabniki/uporabniki.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/kartice.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/kartice.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/kartice.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/kartice.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/karticeSeznami.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartica.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartica.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/app/kartice/services/kartice.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/frontend/goalgettergroup/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/servlet/ObvestilaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/servlet/ObvestilaAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/viri/ObvestilaViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/java/si/fri/ggg/obvestila/api/v1/viri/ObvestilaViri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/api-obvestila/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/timer/entitete/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/obvestila/entitete/Obvestila.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/timer/entitete/TimerEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/obvestila/entitete/ObvestilaEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/timer/pretvorniki/InstantPretvornik.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/obvestila/pretvorniki/InstantPretvornik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/timer/zrna/TimerAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/obvestila/zrna/TimerAPIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/timer/zrna/TimerZrna.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/obvestila/zrna/TimerZrna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/timer/zrna/UpravljanjeTimers.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/obvestila/zrna/UpravljanjeTimers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/api-timer/src/main/java/si/fri/ggg/timer/api/v1/viri/TimerViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/api-timer/src/main/java/si/fri/ggg/timer/api/v1/viri/TimerViri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/entitete-timer/src/main/java/si/fri/ggg/timer/entitete/TimerEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/entitete-timer/src/main/java/si/fri/ggg/timer/entitete/TimerEnt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/timer/zrna/TimerAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/storitve-Obvestila/src/main/java/si/fri/ggg/obvestila/zrna/ObvestilaAPIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/timer/zrna/TimerZrna.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/storitve-timer/src/main/java/si/fri/ggg/timer/zrna/UpravljanjeTimers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/obvestila/entitete/ObvestilaEnt.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevObvestila/entitete-Obvestila/src/main/java/si/fri/ggg/obvestila/entitete/ObvestilaEnt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevUporabniki/api-uporabniki/src/main/resources/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +74,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ObvestilaAPI.executor": "Run",
     "Maven.goalgettergroup [clean].executor": "Run",
     "Maven.goalgettergroup [install].executor": "Run",
     "Maven.goalgettergroup [package].executor": "Run",
@@ -254,7 +245,14 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1736733381226</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="delovanje storitevKartice in storitevUporabnik v dockerju">
+      <option name="closed" value="true" />
+      <created>1736735950540</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1736735950541</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
