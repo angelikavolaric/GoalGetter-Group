@@ -11,7 +11,7 @@
 
 <!-- Display details for the selected Seznam -->
 <div *ngIf="urlId !== '' ">
-  <h3>Uredi Seznam kartic</h3>
+  <h3>Edit Seznam</h3>
   <div *ngIf="seznam">
     <p>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen }} | {{ seznam.kartice }}</p>
     <button (click)="deleteSeznam(seznam)">Izbriši</button>
@@ -41,15 +41,14 @@
 
       <button type="submit">Dodaj Kartico</button>
     </form>
-    <br>
-    <hr>
-    <br>
 
     <ul>
       <li *ngFor="let kartica of kartice">
+        <div *ngIf="kartica.karticeSeznamId === seznam.id">
         <h3>{{ kartica.id }} | {{ kartica.vprasanje }} | {{ kartica.odgovor }}</h3>
-        <button [routerLink]="['/kartica', kartica.id]">Uredi</button>
-        <button (click)="deleteKartica(kartica)">Izbrii</button>
+        <button [routerLink]="['/kartica', kartica.id]">Edit</button>
+        <button (click)="deleteKartica(kartica)">Delete</button>
+        </div>
       </li>
     </ul>
   </div>

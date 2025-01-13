@@ -5,9 +5,9 @@ kumuluzee:
     name: dev
   cors:
     enabled: true
-    allowed-origins: "http://localhost:4200"  # Allow requests from Angular frontend
-    allowed-methods: "GET, POST, PUT, DELETE, OPTIONS"
-    allowed-headers: "Content-Type, Authorization, X-Requested-With, Origin, Accept"
+    origins: "http://localhost:4200"  # Allow requests from Angular frontend
+    methods: "GET, POST, PUT, DELETE, OPTIONS"
+    headers: "Content-Type, Authorization, X-Requested-With"
   #datasources:
     #- jndi-name: jdbc/KarticeDS
   #    connection-url: jdbc:postgresql://localhost:5432/kartice_database

@@ -58,7 +58,6 @@ public class KarticaZrno {
         }
         novaKartica.setKarticeSeznam(seznam);
         seznam.getKartice().add(novaKartica); // Ensure kartice list is updated
-
         em.getTransaction().begin();
         em.persist(novaKartica);
         em.merge(seznam);  // This can help ensure the KarticeSeznam entity is updated

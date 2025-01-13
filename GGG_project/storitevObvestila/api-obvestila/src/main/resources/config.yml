@@ -1,0 +1,10 @@
+kumuluzee:
+  name: storitevTimer
+  version: 1.0.0
+  env:
+    name: dev
+  cors:
+    enabled: true
+    origins: "http://localhost:4200"  # Allow requests from Angular frontend
+    methods: "GET, POST, PUT, DELETE, OPTIONS"
+    headers: "Content-Type, Authorization, X-Requested-With"

@@ -10,9 +10,11 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import si.fri.ggg.timer.api.servlet.TimerAPI;
+import si.fri.ggg.timer.entitete.Timer;
 import si.fri.ggg.timer.entitete.TimerEnt;
 import si.fri.ggg.timer.zrna.TimerZrna;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;

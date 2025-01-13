@@ -1,7 +1,7 @@
 <!-- src/app/kartice/kartica.component.html -->
 <!-- Display Kartica details with Edit and Delete buttons -->
 <div *ngIf="urlId !== ''">
-  <h3>Uredi Kartico</h3>
+  <h3>Edit Kartica</h3>
 
   <div *ngIf="kartica">
     <p>{{ kartica?.id }} | {{ kartica?.vprasanje }} | {{ kartica?.odgovor }} | {{ kartica?.karticeSeznamId }}</p>
@@ -27,8 +27,8 @@
   <ul>
     <li *ngFor="let kartica of kartice">
       <h3>{{ kartica.id }} | {{ kartica.vprasanje }} | {{ kartica.odgovor }}</h3>
-      <button [routerLink]="['/kartica', kartica.id]">Uredi</button>
-      <button (click)="deleteKartica(kartica)">Izbriši</button>
+      <button [routerLink]="['/kartica', kartica.id]">Edit</button>
+      <button (click)="deleteKartica(kartica)">Delete</button>
     </li>
   </ul>
 </div>

@@ -58,38 +58,25 @@ public class CiljZrno {
             em.flush();
             em.getTransaction().commit();
             log.info("Cilj persisted with ID: " + c.getId() );
-            return c;
         } catch (Exception e) {
-            log.severe("Error adding cilj" + e.getMessage());
-            if (em.getTransaction().isActive()) {
-                em.getTransaction().rollback();
-            }
-            throw new RuntimeException("Error adding user", e);
+            log.severe("Error persisting cilj" + e.getMessage());
         }
+        return c;
+
     }
 
     @Transactional
     public boolean odstraniCilj(int ciljId){
-        try{
-            Cilj cilj = em.find(Cilj.class, ciljId);
-            if(cilj != null){
-                em.getTransaction().begin();
-                em.remove(ciljId);
-                em.flush();
-                em.getTransaction().commit();
-                log.info("Cilj with ID: " + ciljId + " removed.");
-                return true;
-            } else {
-                log.warning("User with ID " + ciljId + " not found.");
-                return false;
-            }
-        }catch (Exception e) {
-        log.severe("Error removing user: " + e.getMessage());
-        if (em.getTransaction().isActive()) {
-            em.getTransaction().rollback();
+        Cilj cilj = em.find(Cilj.class, ciljId);
+        if(cilj != null){
+            em.getTransaction().begin();
+            em.remove(ciljId);
+            em.flush();
+            em.getTransaction().commit();
+            log.info("Cilj with ID: " + ciljId + " removed.");
+            return true;
         }
-        throw new RuntimeException("Error removing user with ID " + ciljId, e);
-    }
+        return false;
     }
 
     @Transactional
@@ -98,8 +85,6 @@ public class CiljZrno {
         if(obstojeciCilj != null){
             obstojeciCilj.setCiljUr(cilj.getCiljUr());
             obstojeciCilj.setCiljMin(cilj.getCiljMin());
-            obstojeciCilj.setOpis(cilj.getOpis());
-            obstojeciCilj.setUporabnikid(cilj.getId());
             em.getTransaction().begin();
             Cilj novCilj = em.merge(obstojeciCilj);
             em.flush();

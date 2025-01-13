@@ -36,13 +36,14 @@ export class UporabnikiComponent implements OnInit {
 
 
   getUporabniki(): void {
+    console.log("in")
     this.uporabnikService.getUporabniki().subscribe(
         (uporabniki) => {
           this.uporabniki = uporabniki;  // Correctly assign the fetched kartice to the component's array
           console.log(this.uporabniki)
         },
         (error) => {
-          console.error('Error fetching uporabniki:', error);  // Handle any error that occurs during the HTTP request
+          console.error('Error fetching kartice:', error);  // Handle any error that occurs during the HTTP request
         }
       );
   }

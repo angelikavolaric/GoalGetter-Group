@@ -2,7 +2,6 @@ package si.fri.ggg.timer.api.servlet;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kumuluz.ee.configuration.utils.ConfigurationUtil;
 import si.fri.ggg.timer.api.v1.viri.TimerViri;
 import si.fri.ggg.timer.entitete.TimerEnt;
 
@@ -25,11 +24,10 @@ public class TimerAPI {
     //https://api.clockify.me/api/v1/file/image
     //https://api.clockify.me/api/v1/workspaces/{workspaceId}/time-entries
 
-
-    //private static final String ACCESS_TOKEN = "YmQyNmI5MWQtNGI5Yy00ODhiLTllMGUtNzk4YTFkZTVkMGJl";
+    private static final String ACCESS_TOKEN = "YmQyNmI5MWQtNGI5Yy00ODhiLTllMGUtNzk4YTFkZTVkMGJl";
     private static final String WORKSPACE_ID = "6783b08b1c567d719f27a5ee";
-    private static final String ACCESS_TOKEN = System.getenv("YOUR_ACCESS_TOKEN");
-   // private static final String WORKSPACE_ID = "id";*/
+    /*private static final String ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
+    private static final String WORKSPACE_ID = "id";*/
     @Inject
     TimerViri timerViri;
 
@@ -61,11 +59,11 @@ public class TimerAPI {
                 String zac = jsonNode.get("start").asText();
                 String kon = jsonNode.get("end").asText();
 
-                /*TimerEnt timerEnt = new TimerEnt();
+                TimerEnt timerEnt = new TimerEnt();
                 timerEnt.setOpis(opis);
                 timerEnt.setOuterAPIid(apiId);
                 timerEnt.setZacetek(zac);
-                timerEnt.setKonec(kon);*/
+                timerEnt.setKonec(kon);
 
                 //timerViri.postTimer(timerEnt);
 

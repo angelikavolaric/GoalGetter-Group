@@ -18,12 +18,9 @@
         <module name="storitve-uporabniki" />
         <module name="entitete-belezenje" />
         <module name="api-deljenje" />
-        <module name="entitete-obvestila" />
         <module name="entitete-uporabniki" />
         <module name="entitete-deljenje" />
-        <module name="storitve-obvestila" />
         <module name="api-uporabniki" />
-        <module name="api-obvestila" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">

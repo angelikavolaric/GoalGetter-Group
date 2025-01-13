@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 export class UporabnikiService {
 
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
-  private url = 'http://localhost:8082/v1/uporabniki';
+  private url = 'http://localhost:8082/v1/uporabniki';  // Update the endpoint to work with 'kartice'
 
   constructor(private http: HttpClient) {}
 
