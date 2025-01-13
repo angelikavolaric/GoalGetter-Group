@@ -1,0 +1,134 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/KATJAVERZN/ApiStoritevTimer/1.0.0
+  - description: "Development server"
+    url: http://localhost:8088/v1
+info:
+  description: "Mikrostoritev za ustvarjanje časovnikov."
+  version: 1.0.0
+  title: "API za časovnike"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Časovnik
+    description: "Operacije za manipulacijo časovnikov"
+paths:
+  /timer:
+    get:
+      tags:
+        - Časovnik
+      summary: "vrne vse časovnike"
+      operationId: pridobiVseČasovnike
+      description: "Vrne vse časovnike na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of timers"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Casovnik'
+    post:
+      tags:
+        - Časovnik
+      summary: "doda nov časovnik"
+      operationId: ustvariČasovnik
+      description: "Doda nov časovnik na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: timer already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Casovnik'
+        description: "Primer časovnika, ki ga bomo dodali"
+  '/timers/{časovnikid}':
+    get:
+      tags:
+        - Časovnik
+      summary: "vrne zahtevan časovnik"
+      operationId: pridobiČasovnik
+      description: "Vrne zahtevan časovnik iz podatkovne baze"
+      parameters:
+        - name: časovnikid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID časovnika, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Casovnik'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Timer not found" }
+    delete:
+      tags:
+        - Časovnik
+      summary: "odstrani zahtevan časovnik"
+      operationId: odstraniČasovnik
+      description: "Odstrani zahtevan časovnik iz podatkovne baze"
+      parameters:
+        - name: časovnikid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID časovnika, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - timer was deleted successfully"
+        '404':
+          description: "Not found - the timer with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Timer not found" }
+components:
+  schemas:
+    Casovnik:
+      type: object
+      required:
+        - id
+        - outerAPIid
+        - opis
+        - zacetek
+        - konec
+      properties:
+        id:
+          type: integer
+          example: 12
+        outerAPIid:
+          type: string
+          example: "6483hs9g63"
+        opis:
+          type: string
+          example: "testni"
+        zacetek:
+          type: string
+          example: "2025-01-12T14:00:00Z"
+        konec:
+          type: string
+          example: "2025-01-12T15:00:00Z"
