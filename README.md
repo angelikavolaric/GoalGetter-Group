@@ -7,7 +7,7 @@ se iz njih uči, beleži napredek in ga deli s prijatelji ter z njimi tekmuje.
 
 ## Docker vrata
 **storitevKartice:** \
-&emsp; karticeContainer: *8080* \
+&emsp; karticeContainer: *8081* \
 &emsp; karticeDatabase: *5432*
 
 **storitevUporabniki:** \
@@ -15,12 +15,12 @@ se iz njih uči, beleži napredek in ga deli s prijatelji ter z njimi tekmuje.
 &emsp; uporabnikiDatabase: *5434*
 
 **storitevBelezenje:** \
-&emsp; uporabnikiContainer: *8084* \
-&emsp; uporabnikiDatabase: *5436*
+&emsp; uporabnikiContainer: *8083* \
+&emsp; uporabnikiDatabase: *5435*
 
 **storitevDeljenje:** \
-&emsp; uporabnikiContainer: *8086* \
-&emsp; uporabnikiDatabase: *5438*
+&emsp; uporabnikiContainer: *8087* \
+&emsp; uporabnikiDatabase: *5439*
 
 **storitevCasovnik:** \
 &emsp; uporabnikiContainer: *8088* \
