@@ -134,8 +134,6 @@ public class DeljenjeViri {
     @Path("/{ciljId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteCilj(@PathParam("ciljId") int ciljId) {
-
-
         try {
             CiljZrno ciljZrno = new CiljZrno();
             boolean result = ciljZrno.odstraniCilj(ciljId);
@@ -154,7 +152,7 @@ public class DeljenjeViri {
         }
     }
 
-    private static final String BASE_URL = "http://localhost:8083/v1/ure/uporabnik";
+    private static final String BASE_URL = "http://localhost:8083/v1/ure/napredekur";
     @GET
     @Path("/napredek/{uporabnikId}")
     public Response getUre(@PathParam("uporabnikId") int uporabnikId){

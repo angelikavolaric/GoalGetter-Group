@@ -161,7 +161,7 @@ public class UreZrno {
                 log.severe("EntityManager is null!");
                 throw new RuntimeException("EntityManager is null!");
             }
-            TypedQuery<Object[]> ure = em.createQuery("SELECT SUM(u.vnosiUr) AS ure, SUM(u.vnosiMin) AS min FROM Ure u WHERE u.uporabnikId = :uporabnikId", Object[].class);
+            TypedQuery<Object[]> ure = em.createQuery("SELECT SUM(u.vnosiUr), SUM(u.vnosiMin) FROM Ure u WHERE u.uporabnikId = :uporabnikId", Object[].class);
             ure.setParameter("uporabnikId", uporabnikId);
             List<Object[]> u = ure.getResultList();
             return u;
