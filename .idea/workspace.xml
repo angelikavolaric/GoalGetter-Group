@@ -9,24 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8322466f-8d55-49fb-b3bc-ef4dd3cf4205" name="Changes" comment="delovanje storitevKartice in storitevUporabnik v dockerju">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiDokumentacije/storitevBelezenje.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiDokumentacije/storitevBelezenje.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiDokumentacije/storitevCasovnik.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiDokumentacije/storitevCasovnik.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiDokumentacije/storitevDeljenje.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiDokumentacije/storitevDeljenje.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/api-belezenje/src/main/java/si/fri/ggg/belezenje/api/v1/viri/BelezenjeViri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/db/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/db/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/java/si/fri/ggg/belezenje/entitete/Ure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/sql-scripts/init-db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/entitete-belezenje/src/main/resources/sql-scripts/init-db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevBelezenjeUr/storitve-belezenje/src/main/java/si/fri/ggg/belezenje/zrna/UreZrno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/api-deljenje/src/main/java/si/fri/ggg/deljenje/api/v1/viri/DeljenjeViri.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/api-deljenje/src/main/java/si/fri/ggg/deljenje/api/v1/viri/DeljenjeViri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GGG_project/storitevDeljenje/storitve-deljenje/src/main/java/si/fri/ggg/deljenje/zrna/CiljZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevDeljenje/storitve-deljenje/src/main/java/si/fri/ggg/deljenje/zrna/CiljZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/api-kartice/src/main/java/si/fri/ggg/kartice/api/v1/viri/KarticeSeznamVir.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevKartice/storitve-kartice/src/main/java/si/fri/ggg/kartice/zrna/UpravljanjeKarticSeznamZrno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevSporocila/api-sporocila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/api-sporocila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevSporocila/entitete-sporocila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/entitete-sporocila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevSporocila/storitve-sporocila/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevSporocila/storitve-sporocila/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/api-timer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/api-timer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GGG_project/storitevTimer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GGG_project/storitevTimer/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
