@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>api-sporocila</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -55,10 +56,15 @@
             <version>2.0.0</version>
         </dependency>
 
-
         <dependency>
             <groupId>si.fri.ggg</groupId>
             <artifactId>storitve-sporocila</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>si.fri.ggg</groupId>
+            <artifactId>entitete-timer</artifactId>
             <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
