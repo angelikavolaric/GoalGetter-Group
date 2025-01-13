@@ -1,4 +1,4 @@
-package si.fri.ggg.kartice.api.v1;
+package si.fri.ggg.uporabniki.api.v1;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
