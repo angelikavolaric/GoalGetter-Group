@@ -154,6 +154,23 @@ public class UreZrno {
             throw new RuntimeException("Error retrieving all Ure", e);
         }
     }
+
+    @Transactional
+    public List<Object[]> pridobiUreUp(int uporabnikId) {
+        try {
+            if (em == null) {
+                log.severe("EntityManager is null!");
+                throw new RuntimeException("EntityManager is null!");
+            }
+            TypedQuery<Object[]> ure = em.createQuery("SELECT SUM(u.vnosiUr), SUM(u.vnosiMin) FROM Ure u WHERE u.uporabnikId = :uporabnikId", Object[].class);
+            ure.setParameter("uporabnikId", uporabnikId);
+            List<Object[]> u = ure.getResultList();
+            return u;
+        } catch (Exception e) {
+            log.severe("Error retrieving all Ure: " + e.getMessage());
+            throw new RuntimeException("Error retrieving all Ure", e);
+        }
+    }
 }
 
 /*package si.fri.ggg.belezenje.zrna;
