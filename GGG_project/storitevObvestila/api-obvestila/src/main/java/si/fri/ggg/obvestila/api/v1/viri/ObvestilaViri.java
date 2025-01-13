@@ -1,6 +1,5 @@
 package si.fri.ggg.obvestila.api.v1.viri;
 
-
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
@@ -9,10 +8,9 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
-import si.fri.ggg.timer.api.servlet.TimerAPI;
-import si.fri.ggg.timer.entitete.Timer;
-import si.fri.ggg.timer.entitete.TimerEnt;
-import si.fri.ggg.timer.zrna.TimerZrna;
+import si.fri.ggg.obvestila.api.servlet.ObvestilaAPI;
+import si.fri.ggg.obvestila.entitete.ObvestilaEnt;
+import si.fri.ggg.obvestila.zrna.ObvestilaZrna;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -26,42 +24,34 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS", allowOrigin = "http://localhost:4200")
-
 @Path("/obvestila")
 public class ObvestilaViri {
 
-
     private final ObvestilaAPI obvestilaAPI = new ObvestilaAPI();
-    private final TimerZrna timerZrna = new TimerZrna();
+    private final ObvestilaZrna obvestilaZrna = new ObvestilaZrna();
 
-    /*@Inject
-    public TimerViri (TimerAPI timerAPI, TimerZrna timerZrna){
-        this.timerZrna = timerZrna;
-        this.timerAPI = timerAPI;
-    }*/
-    private static final Logger log = Logger.getLogger(TimerViri.class.getName());
+    private static final Logger log = Logger.getLogger(ObvestilaViri.class.getName());
 
     @Context
     protected UriInfo uriInfo;
 
-    @Operation(description = "Vrne seznam vnesenih časovnikov.", summary = "Seznam časovnikov")
+    @Operation(description = "Vrne seznam vnesenih obvestil.", summary = "Seznam obvestil")
     @APIResponses({
             @APIResponse(responseCode = "200",
-                    description = "Seznam časovnikov",
-                    content = @Content(schema = @Schema(implementation = TimerEnt.class, type = SchemaType.ARRAY)),
-                    headers = {@Header(name = "X-Total-Count", description = "Število vrnjenih ciljev")}
-            )})
+                    description = "Seznam obvestil",
+                    content = @Content(schema = @Schema(implementation = ObvestilaEnt.class, type = SchemaType.ARRAY)),
+                    headers = {@Header(name = "X-Total-Count", description = "Število vrnjenih obvestil")})
+    })
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllTimers() {
+    public Response getAllObvestila() {
         try {
-            TimerZrna timerZrna = new TimerZrna();
-            List<TimerEnt> vsi = timerZrna.pridobiVseTimere();
+            List<ObvestilaEnt> vsi = obvestilaZrna.pridobiVseObvestila();
 
             if (vsi.isEmpty()) {
                 return Response.status(Response.Status.NOT_FOUND)
-                        .entity("No timers found.")
+                        .entity("No obvestila found.")
                         .build();
             }
 
@@ -69,9 +59,9 @@ public class ObvestilaViri {
                     .header("X-Total-Count", vsi.size())
                     .build();
         } catch (Exception e) {
-            //log.severe("Error retrieving timers: " + e.getMessage());
+            log.severe("Error retrieving obvestila: " + e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("An error occurred while retrieving timers.")
+                    .entity("An error occurred while retrieving obvestila.")
                     .build();
         }
     }
@@ -79,70 +69,67 @@ public class ObvestilaViri {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response postTimer(TimerEnt novTimer) {
-        try{
-            String ID = timerAPI.setTimer(novTimer.getOpis(), novTimer.getZacetek(), novTimer.getKonec());
-            novTimer.setOuterAPIid(ID);
-            TimerEnt ustvariTimer = timerZrna.ustvariTimer(novTimer);
+    public Response postObvestilo(ObvestilaEnt novoObvestilo) {
+        try {
+            String apiId = obvestilaAPI.sendMessage(novoObvestilo.getZadeva(), novoObvestilo.getSporocilo());
+            novoObvestilo.setOuterAPIid(apiId);
 
+            ObvestilaEnt ustvariObvestilo = obvestilaZrna.ustvariObvestilo(novoObvestilo);
 
-
-
-            return Response.status(Response.Status.CREATED).entity(ustvariTimer).build();
+            return Response.status(Response.Status.CREATED).entity(ustvariObvestilo).build();
         } catch (Exception e) {
-            log.severe("Error adding new timer: " + e.getMessage());
+            log.severe("Error adding new obvestilo: " + e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("An error occurred while adding the timer.")
+                    .entity("An error occurred while adding the obvestilo.")
                     .build();
         }
     }
 
     @GET
-    @Path("/{timerId}")
+    @Path("/{obvestiloId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getTimer(@PathParam("timerId") int timerId) {
+    public Response getObvestilo(@PathParam("obvestiloId") int obvestiloId) {
         try {
-            TimerEnt timerEnt = timerZrna.pridobiTimer(timerId);
-            //Cilj cilj = clijZrno.pridobiCilj(ciljId);
-            if (timerEnt == null) {
+            ObvestilaEnt obvestiloEnt = obvestilaZrna.pridobiObvestilo(obvestiloId);
+
+            if (obvestiloEnt == null) {
                 return Response.status(Response.Status.NOT_FOUND)
-                        .entity("Timer with ID " + timerId + " not found.")
+                        .entity("Obvestilo with ID " + obvestiloId + " not found.")
                         .build();
             }
-            return Response.ok(timerEnt).build();
+            return Response.ok(obvestiloEnt).build();
         } catch (Exception e) {
-            log.severe("Error retrieving timer with ID " + timerId + ": " + e.getMessage());
+            log.severe("Error retrieving obvestilo with ID " + obvestiloId + ": " + e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("An error occurred while retrieving the timer.")
+                    .entity("An error occurred while retrieving the obvestilo.")
                     .build();
         }
     }
 
     @DELETE
-    @Path("/{timerId}")
+    @Path("/{obvestiloId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteTimer(@PathParam("timerId") int timerId) {
-
-
+    public Response deleteObvestilo(@PathParam("obvestiloId") int obvestiloId) {
         try {
-            TimerEnt timerEnt = timerZrna.pridobiTimer(timerId);
-            boolean res = timerZrna.odstraniTimer(timerId);
+            ObvestilaEnt obvestiloEnt = obvestilaZrna.pridobiObvestilo(obvestiloId);
+            boolean res = obvestilaZrna.odstraniObvestilo(obvestiloId);
 
             if (!res) {
                 return Response.status(Response.Status.NOT_FOUND)
-                        .entity("Timer with ID " + timerId + " not found.")
+                        .entity("Obvestilo with ID " + obvestiloId + " not found.")
                         .build();
             }
-            String Id = timerEnt.getOuterAPIid();
-            timerAPI.deleteTimeEntry(Id);
+
+            // Assuming you have a method to delete from the external API if needed.
+            String apiId = obvestiloEnt.getOuterAPIid();
+            obvestilaAPI.deleteTimeEntry(apiId);  // This should be implemented based on your API design.
 
             return Response.status(Response.Status.NO_CONTENT).build();
         } catch (Exception e) {
-            log.severe("Error deleting timer with ID " + timerId + ": " + e.getMessage());
+            log.severe("Error deleting obvestilo with ID " + obvestiloId + ": " + e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity("An error occurred while deleting the timer.")
+                    .entity("An error occurred while deleting the obvestilo.")
                     .build();
         }
     }
-
 }

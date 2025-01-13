@@ -2,9 +2,8 @@ package si.fri.ggg.obvestila.api.servlet;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import si.fri.ggg.timer.api.v1.viri.TimerViri;
-import si.fri.ggg.timer.entitete.TimerEnt;
-
+import si.fri.ggg.obvestila.api.v1.viri.ObvestilaViri;
+import si.fri.ggg.obvestila.entitete.ObvestilaEnt;
 
 import javax.inject.Inject;
 import javax.servlet.annotation.WebServlet;
@@ -18,42 +17,44 @@ import java.net.http.HttpResponse;
 @WebServlet("/servlet")
 public class ObvestilaAPI {
 
-    //TimerEnt timerEnt = new TimerEnt();
-    //api KEY : YmQyNmI5MWQtNGI5Yy00ODhiLTllMGUtNzk4YTFkZTVkMGJl
-    // workspaceid ??? 6783b08b1c567d719f27a5ee
-    //https://api.clockify.me/api/v1/file/image
-    //https://api.clockify.me/api/v1/workspaces/{workspaceId}/time-entries
-//os_v2_app_pxxxv73w5ndt7ksyadgehusej6datp5cqb4u4dednskx6acxuuy73cmhsizmfhrkid6wtfewqta5rmr4iylmtatm6m4a4vr5rwq4qta
+    // Constants for API authentication and endpoints
     private static final String YOUR_APP_API_KEY = "os_v2_app_pxxxv73w5ndt7ksyadgehusej4cg3rk6azremyvmmgaspus2aqub43zgwgcprulzbqb7na4i5f74oviilccho62idlnbffhq7tmehta";
     private static final String YOUR_APP_ID = "7def7aff-76eb-473f-aa58-00cc43d2444f";
-    /*private static final String ACCESS_TOKEN = "YOUR_ACCESS_TOKEN";
-    private static final String WORKSPACE_ID = "id";*/
+    private static final String CLOCKIFY_API_URL = "https://api.clockify.me/api/v1/workspaces/%s/time-entries";
+
     @Inject
     ObvestilaViri obvestilaViri;
 
-    public String sendMessage(String zadeva, String sporocilo)
-    {
+    /**
+     * Method to send a message via OneSignal API
+     *
+     * @param zadeva    The subject of the message
+     * @param sporocilo The content of the message
+     * @return The response or error message
+     */
+    public String sendMessage(String zadeva, String sporocilo) {
         try {
             String apiUrl = "https://api.onesignal.com/notifications?c=email" + YOUR_APP_API_KEY;
-            String jsonRequest = String.format("{\"app_id\": \"%s\",
-                    \"email_subject\": \"$s\",
-                    \"email_body": \"<html>%s</html>\",
-                    \"email_from_name\": \"GoalGetterGroup\",
-                    \"email_from_address\": \"hello@thetribeofchaos.com\",
-                    \"name\": \"GoalGetterGroup\"}", zadeva, sporocilo);
+
+            String jsonRequest = String.format("{\"app_id\": \"%s\", " +
+                            "\"email_subject\": \"%s\", " +
+                            "\"email_body\": \"<html>%s</html>\", " +
+                            "\"email_from_name\": \"GoalGetterGroup\", " +
+                            "\"email_from_address\": \"hello@thetribeofchaos.com\", " +
+                            "\"name\": \"GoalGetterGroup\"}",
+                    YOUR_APP_ID, zadeva, sporocilo);
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(apiUrl))
                     .header("Content-Type", "application/json")
-                    .header("X-Api-Key", ACCESS_TOKEN)
+                    .header("X-Api-Key", YOUR_APP_API_KEY)
                     .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
                     .build();
-            //sending
+
             HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> postResponse =client.send(request, HttpResponse.BodyHandlers.ofString());
-            //handle
+            HttpResponse<String> postResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
+
             if (postResponse.statusCode() == 201) {
-                //Parsing RAAH
                 String response = postResponse.body();
                 ObjectMapper objectMapper = new ObjectMapper();
                 JsonNode jsonNode = objectMapper.readTree(response);
@@ -62,143 +63,115 @@ public class ObvestilaAPI {
                 String zac = jsonNode.get("start").asText();
                 String kon = jsonNode.get("end").asText();
 
-                TimerEnt timerEnt = new TimerEnt();
-                timerEnt.setOpis(opis);
-                timerEnt.setOuterAPIid(apiId);
-                timerEnt.setZacetek(zac);
-                timerEnt.setKonec(kon);
+                ObvestilaEnt obvestilaEnt = new ObvestilaEnt();
+                obvestilaEnt.setOpis(sporocilo);
+                obvestilaEnt.setOuterAPIid(apiId);
+                obvestilaEnt.setZacetek(zac);
+                obvestilaEnt.setKonec(kon);
 
-                //timerViri.postTimer(timerEnt);
-
-
+                obvestilaViri.postObvestila(obvestilaEnt);
 
                 return apiId;
             } else {
                 return "Error sending message: " + postResponse.statusCode() + " - " + postResponse.body();
             }
-        } catch (URISyntaxException e) {
-            throw new RuntimeException("Invalid API URL", e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException("Error in sendMessage", e);
         }
     }
 
-    public String getTimeEntry(String timeEntryId)
-    {
+    /**
+     * Method to get a specific time entry by its ID
+     *
+     * @param timeEntryId The ID of the time entry to retrieve
+     * @return The result of the time entry retrieval
+     */
+    public String getTimeEntry(String timeEntryId) {
+        return executeClockifyRequest("GET", timeEntryId, null);
+    }
+
+    /**
+     * Method to retrieve all time entries
+     *
+     * @return The result of retrieving all time entries
+     */
+    public String getAllTimeEntries() {
+        return executeClockifyRequest("GET", null, null);
+    }
+
+    /**
+     * Method to delete a specific time entry by its ID
+     *
+     * @param timeEntryId The ID of the time entry to delete
+     * @return The result of the deletion
+     */
+    public String deleteTimeEntry(String timeEntryId) {
+        return executeClockifyRequest("DELETE", timeEntryId, null);
+    }
+
+    /**
+     * Generic method for handling Clockify API requests
+     *
+     * @param method      The HTTP method (GET, DELETE)
+     * @param timeEntryId The ID of the time entry (nullable for some requests)
+     * @param payload     The request body (nullable for GET/DELETE)
+     * @return The result of the request
+     */
+    private String executeClockifyRequest(String method, String timeEntryId, String payload) {
         try {
-            String apiUrl = "https://api.clockify.me/api/v1/workspaces/" + WORKSPACE_ID + "/time-entries/" + timeEntryId;
+            String apiUrl = String.format(CLOCKIFY_API_URL, YOUR_APP_ID);
 
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI(apiUrl))
-                    .header("X-Api-Key", ACCESS_TOKEN)
-                    .GET()
-                    .build();
-            //sending
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> getResponse =client.send(request, HttpResponse.BodyHandlers.ofString());
-            //handle
-            if (getResponse.statusCode() == 200) {
-                return "Time Entry retrieved successfully: " + getResponse.body();
-            } else {
-                return "Error retrieving time entry: " + getResponse.statusCode() + " - " + getResponse.body();
+            if (timeEntryId != null) {
+                apiUrl += "/" + timeEntryId;
             }
-        } catch (URISyntaxException e) {
-            throw new RuntimeException("Invalid API URL", e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+
+            HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
+                    .uri(new URI(apiUrl))
+                    .header("X-Api-Key", YOUR_APP_API_KEY);
+
+            if ("POST".equalsIgnoreCase(method)) {
+                requestBuilder.POST(HttpRequest.BodyPublishers.ofString(payload));
+            } else if ("DELETE".equalsIgnoreCase(method)) {
+                requestBuilder.DELETE();
+            } else {
+                requestBuilder.GET();
+            }
+
+            HttpRequest request = requestBuilder.build();
+            HttpClient client = HttpClient.newHttpClient();
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200 || response.statusCode() == 204) {
+                return "Request successful: " + response.body();
+            } else {
+                return "Error in request: " + response.statusCode() + " - " + response.body();
+            }
+
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException("Error in executeClockifyRequest", e);
         }
     }
 
-    public String getAllTimeEntries()
-    {
-        try {
-            String apiUrl = "https://api.clockify.me/api/v1/workspaces/" + WORKSPACE_ID + "/time-entries";
-
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI(apiUrl))
-                    .header("X-Api-Key", ACCESS_TOKEN)
-                    .GET()
-                    .build();
-            //sending
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> getResponse =client.send(request, HttpResponse.BodyHandlers.ofString());
-            //handle
-            if (getResponse.statusCode() == 200) {
-                return "Time Entries retrieved successfully: " + getResponse.body();
-            } else {
-                return "Error retrieving time entries: " + getResponse.statusCode() + " - " + getResponse.body();
-            }
-        } catch (URISyntaxException e) {
-            throw new RuntimeException("Invalid API URL", e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String deleteTimeEntry(String timeEntryId)
-    {
-        try {
-            String apiUrl = "https://api.clockify.me/api/v1/workspaces/" + WORKSPACE_ID + "/time-entries/" + timeEntryId;
-
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI(apiUrl))
-                    .header("X-Api-Key", ACCESS_TOKEN)
-                    .GET()
-                    .build();
-            //sending
-            HttpClient client = HttpClient.newHttpClient();
-            HttpResponse<String> deleteResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
-            //handle
-            if (deleteResponse.statusCode() == 204) {
-                return "Time Entry deleted successfully";
-            } else {
-                return "Error deleting time entry: " + deleteResponse.statusCode() + " - " + deleteResponse.body();
-            }
-        } catch (URISyntaxException e) {
-            throw new RuntimeException("Invalid API URL", e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-
-
-
-
-
+    /**
+     * Main method to test the API methods
+     */
     public static void main(String[] args) {
         ObvestilaAPI obvestilaAPI = new ObvestilaAPI();
 
-        // Example of setting a timer
+        // Example of sending a message
         String zadeva = "Test";
         String sporocilo = "helloWorld"; // Start time in ISO 8601 format
-
-        String result = ObvestilaAPI.sendMessage(zadeva, sporocilo);
+        String result = obvestilaAPI.sendMessage(zadeva, sporocilo);
         System.out.println(result);
 
         // Example of getting a time entry by its ID
-        /*  String timeEntryId = "6783be8c5be34b0f9660d627"; // Replace with an actual time entry ID from Clockify
-        String getResult = timerAPI.getTimeEntry(timeEntryId);
-        System.out.println(getResult);
+        // String timeEntryId = "6783be8c5be34b0f9660d627"; // Replace with an actual time entry ID from Clockify
+        // String getResult = obvestilaAPI.getTimeEntry(timeEntryId);
+        // System.out.println(getResult);
 
         // Example of deleting a time entry by its ID
-        String deleteResult = timerAPI.deleteTimeEntry(timeEntryId);
-        System.out.println(deleteResult);*/
+        // String deleteResult = obvestilaAPI.deleteTimeEntry(timeEntryId);
+        // System.out.println(deleteResult);
     }
 }
-
-
-
-

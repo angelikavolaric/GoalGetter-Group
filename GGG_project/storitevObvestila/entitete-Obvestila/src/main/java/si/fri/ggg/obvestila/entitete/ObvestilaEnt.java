@@ -1,16 +1,14 @@
-package si.fri.ggg.timer.entitete;
+package si.fri.ggg.obvestila.entitete;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
-@Table(name = "timers")
-@NamedQueries(value = {
-        @NamedQuery(name = "Timer.getAll", query = "SELECT a FROM TimerEnt a")
-})
+@Table(name = "obvestila")
+@NamedQueries(value = { @NamedQuery(name = "Obvestila.getAll", query = "SELECT a FROM ObvestilaEnt a") })
 
-public class TimerEnt {
+public class ObvestilaEnt {
 
 
     @Id

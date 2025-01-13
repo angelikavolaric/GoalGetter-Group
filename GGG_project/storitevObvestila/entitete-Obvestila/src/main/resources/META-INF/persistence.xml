@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="storitevtimer-jpa">
+    <persistence-unit name="storitevobvestila
+-jpa">
         <!--jta-data-source>jdbc/KarticeDS</jta-data-source-->
         <!--jta-data-source>java:GoalGetterGroupDS</jta-data-source-->
-        <class>si.fri.ggg.timer.entitete.TimerEnt</class>
-        <class>si.fri.ggg.timer.pretvorniki.InstantPretvornik</class>
+        <class>si.fri.ggg.obvestila
+.entitete.Obvestila
+Ent</class>
+        <class>si.fri.ggg.obvestila
+.pretvorniki.InstantPretvornik</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://timerDatabase:5432/timer_database"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://obvestila
+Database:5432/obvestila
+_database"/>
             <property name="javax.persistence.jdbc.user" value="user"/>
             <property name="javax.persistence.jdbc.password" value="passwd"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

@@ -1,6 +1,5 @@
-package si.fri.ggg.timer.zrna;
+package si.fri.ggg.obvestila.zrna;
 
-import si.fri.ggg.timer.entitete.Timer;
 import si.fri.ggg.timer.entitete.TimerEnt;
 
 import javax.annotation.PostConstruct;
@@ -10,10 +9,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
-import javax.swing.text.html.parser.Entity;
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 

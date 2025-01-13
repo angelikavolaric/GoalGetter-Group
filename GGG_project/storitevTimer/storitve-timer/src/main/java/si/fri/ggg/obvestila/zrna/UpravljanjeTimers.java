@@ -1,4 +1,4 @@
-package si.fri.ggg.timer.zrna;
+package si.fri.ggg.obvestila.zrna;
 
 public class UpravljanjeTimers {
 }

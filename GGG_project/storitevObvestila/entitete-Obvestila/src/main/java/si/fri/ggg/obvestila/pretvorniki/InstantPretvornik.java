@@ -1,4 +1,5 @@
-package si.fri.ggg.timer.pretvorniki;
+package si.fri.ggg.obvestila
+.pretvorniki;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

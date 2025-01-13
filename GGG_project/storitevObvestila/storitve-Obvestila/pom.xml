@@ -5,12 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>si.fri.ggg</groupId>
-        <artifactId>storitevTimer</artifactId>
+        <artifactId>storitevObvestila
+</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>storitve-timer</artifactId>
+    <artifactId>storitve-obvestila
+</artifactId>
 
     <dependencies>
         <dependency>
@@ -41,7 +43,8 @@
         </dependency>
         <dependency>
             <groupId>si.fri.ggg</groupId>
-            <artifactId>entitete-timer</artifactId>
+            <artifactId>entitete-obvestila
+</artifactId>
             <version>1.0.0-SNAPSHOT</version>
 
         </dependency>

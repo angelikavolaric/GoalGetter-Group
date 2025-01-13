@@ -1,7 +1,7 @@
-package si.fri.ggg.timer.zrna;
+package si.fri.ggg.obvestila.zrna;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import si.fri.ggg.timer.entitete.Timer;
+import si.fri.ggg.obvestila.entitete.ObvestilaEnt;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,34 +11,39 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class TimerAPIClient {
+public class ObvestilaAPIClient {
+
     private static final String API_URL = "https://api.myintervals.com/timer/";
 
-    public String dodajTimer(Timer timer) throws IOException {
+    // Method to add a notification (Obvestila) via the external API
+    public String dodajObvestilo(ObvestilaEnt obvestilo) throws IOException {
+        // Convert the ObvestilaEnt object to JSON using Jackson
         ObjectMapper objectMapper = new ObjectMapper();
-        String jsonInput = objectMapper.writeValueAsString(timer);
+        String jsonInput = objectMapper.writeValueAsString(obvestilo);
 
-        //api connect
+        // Connect to the external API
         URL url = new URL(API_URL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
 
-        try(OutputStream outputStream = connection.getOutputStream()) {
+        // Send the JSON data to the external API
+        try (OutputStream outputStream = connection.getOutputStream()) {
             byte[] input = jsonInput.getBytes(StandardCharsets.UTF_8);
             outputStream.write(input, 0, input.length);
         }
 
-        //http response code
+        // Read the response from the API
         int responseCode = connection.getResponseCode();
         System.out.println("HTTP response Code : " + responseCode);
 
-        try(BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            String intputLine;
+        // Read the input stream to get the response content
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            String inputLine;
             StringBuilder output = new StringBuilder();
-            while((intputLine = in.readLine()) != null) {
-                output.append(intputLine);
+            while ((inputLine = in.readLine()) != null) {
+                output.append(inputLine);
             }
             return output.toString();
         }

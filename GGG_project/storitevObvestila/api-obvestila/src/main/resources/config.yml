@@ -1,5 +1,6 @@
 kumuluzee:
-  name: storitevTimer
+  name: storitevObvestila
+
   version: 1.0.0
   env:
     name: dev
