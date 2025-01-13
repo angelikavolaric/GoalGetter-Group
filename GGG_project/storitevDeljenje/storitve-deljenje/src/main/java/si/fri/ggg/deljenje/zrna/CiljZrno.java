@@ -13,6 +13,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.logging.Logger;
@@ -112,4 +113,32 @@ public class CiljZrno {
         List<Cilj> cilj = em.createQuery("SELECT c FROM Cilj c", Cilj.class).getResultList();
         return cilj;
     }
+
+    @Transactional
+    public Cilj pridobiCiljeUp(int cID){
+        if (em == null){
+            log.severe("EntityManager is null!");
+        }
+        //List<Cilj> cilj = em.createQuery("SELECT c FROM Cilj c", Cilj.class).getResultList();
+
+        TypedQuery<Cilj> cilj = em.createQuery("SELECT c FROM Cilj c WHERE c.uporabnikid = :uporabnikId", Cilj.class);
+        cilj.setParameter("uporabnikId", cID);
+        Cilj u = cilj.getSingleResult();
+        return u;
+
+    }
+
+    /*@Transactional
+    public Cilj pridobiCiljUp(int ciljId){
+        if (em == null){
+            log.severe("EntityManager is null!");
+        }
+        List<Cilj> cilj = em.createQuery("SELECT c FROM Cilj c", Cilj.class).setMaxResults(1).getResultList();
+
+        Cilj cilj = em.find(Cilj.class, ciljId);
+        if(cilj == null){
+            throw new IllegalArgumentException("Cilj with ID " + ciljId + " not found.");
+        }
+        return cilj;
+    }*/
 }
