@@ -1,8 +1,5 @@
 openapi: 3.0.0
 servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/KATJAVERZN/ApiStoritevTimer/1.0.0
   - description: "Development server"
     url: http://localhost:8088/v1
 info:

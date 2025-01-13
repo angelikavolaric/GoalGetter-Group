@@ -1,7 +1,7 @@
 openapi: 3.0.0
 servers:
   - description: "Development server"
-    url: http://localhost:8084/v1
+    url: http://localhost:8083/v1
 info:
   description: "Mikrostoritev za beleženje ur učenja uporabnika. Uporabnik lahko doda, posodobi ali odstrani svoje vnose."
   version: "1.0.0-SNAPSHOT"

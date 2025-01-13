@@ -1,0 +1,127 @@
+openapi: 3.0.0
+servers:
+  - description: "Development server"
+    url: http://localhost:8089/v1
+info:
+  description: "Mikrostoritev za sporočila."
+  version: 1.0.0
+  title: "API za obvestila"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Obvestilo
+    description: "Operacije za pridobivanje, dodajanje in brisanje obvestil."
+paths:
+  /obvestila:
+    get:
+      tags:
+        - Obvestilo
+      summary: "vrne vsa obvestila"
+      operationId: pridobiVsaObvestila
+      description: "Vrne vsa obvestila na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of messages"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Obvestilo'
+    post:
+      tags:
+        - Obvestilo
+      summary: "doda novo obvestilo"
+      operationId: ustvariObvestilo
+      description: "Doda novo obvestilo na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: message already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Obvestilo'
+        description: "Primer obvestila, ki ga bomo dodali"
+  '/obvestila/{obvestilaid}':
+    get:
+      tags:
+        - Obvestilo
+      summary: "vrne zahtevano obvestilo"
+      operationId: pridobiObvestilo
+      description: "Vrne zahtevano obvestilo iz podatkovne baze"
+      parameters:
+        - name: obvestilaid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID obvestila, ki ga pridobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Obvestilo'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Message not found" }
+    delete:
+      tags:
+        - Obvestilo
+      summary: "odstrani zahtevano obvestilo"
+      operationId: odstraniObvestilo
+      description: "Odstrani zahtevano obvestilo iz podatkovne baze"
+      parameters:
+        - name: obvestilaid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID obvestila, ki ga pridobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - message was deleted successfully"
+        '404':
+          description: "Not found - the message with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Messages not found" }
+components:
+  schemas:
+    Obvestilo:
+      type: object
+      required:
+        - id
+        - outerAPIid
+        - zadeva
+        - sporocilo
+      properties:
+        id:
+          type: integer
+          example: 12
+        outerAPIid:
+          type: string
+          example: "6483hs9g63"
+        zadeva:
+          type: string
+          example: "Test Obvestila"
+        sporocilo:
+          type: string
+          example: "Prejeli ste testno sporočilo"
