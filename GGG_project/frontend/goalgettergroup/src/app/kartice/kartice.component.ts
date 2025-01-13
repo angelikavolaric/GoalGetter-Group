@@ -81,7 +81,7 @@ export class KarticeComponent implements OnInit {
   // Update an existing kartica
   updateKartica(kartica: Kartica): void {
     this.karticaService
-      .updateKartica(kartica.id, kartica)  // Call the update service method
+      .updateKartica(kartica)  // Call the update service method
       .subscribe((updatedKartica) => {
         const index = this.kartice.findIndex(k => k.id === updatedKartica.id);
         if (index !== -1) {

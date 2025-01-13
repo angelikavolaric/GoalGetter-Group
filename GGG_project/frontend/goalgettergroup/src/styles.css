@@ -58,6 +58,7 @@ body {
   font-family: 'Roboto', sans-serif;  /* You can replace with any font */
   font-size: 16px;
   line-height: 1.5;
+  padding: 5ex;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,6 +93,7 @@ main {
   margin-top: 2rem;
 }/* Buttons */
 button {
+  margin: 2px;
   padding: 10px 20px;
   border: none;
   background-color: #007bff;

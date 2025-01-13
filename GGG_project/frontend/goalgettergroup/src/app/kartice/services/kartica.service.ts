@@ -12,6 +12,7 @@ export class KarticaService {
 
   constructor(private http: HttpClient) {}
 
+
   // Get all kartice
   getKartice(): Observable<Kartica[]> {
     return this.http.get<Kartica[]>(this.url)
@@ -39,7 +40,7 @@ export class KarticaService {
   }
 
   // Update an existing kartica
-  updateKartica(id: number, kartica: Kartica): Observable<Kartica> {
+  updateKartica(kartica: Kartica): Observable<Kartica> {
     if (kartica.id) {
       // Update the existing kartica if id exists
       const url = `${this.url}/${kartica.id}`;
