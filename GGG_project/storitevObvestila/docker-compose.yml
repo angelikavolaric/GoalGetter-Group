@@ -2,30 +2,30 @@ version: '3'
 services:
   postgres:
     image: postgres:latest
-    container_name: timerDatabase
+    container_name: obvestilaDatabase
     build:
       context: .
       dockerfile: db/Dockerfile
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: passwd
-      POSTGRES_DB: timer_database
+      POSTGRES_DB: timer_obvestila
     ports:
-      - "5440:5432"
+      - "5442:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
     networks:
-      - timer
+      - obvestila
 
   storitevDeljenje:
-    container_name: timerContainer
-    image: ggg_project-storitevtimer
+    container_name: obvestilaContainer
+    image: ggg_project-storitevobvestila
     build: .
     depends_on:
       - postgres
     ports:
-      - "8088:8080"
+      - "8090:8080"
     networks:
       - timer
 
@@ -33,5 +33,5 @@ volumes:
   postgres_data:
 
 networks:
-  timer:
+  obvestila:
 #    driver: bridge

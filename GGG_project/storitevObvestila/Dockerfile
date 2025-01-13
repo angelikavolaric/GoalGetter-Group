@@ -8,3 +8,4 @@ VOLUME /tmp
 EXPOSE 8080
 #RUN chmod +x /api-kartice-1.0.0-SNAPSHOT.jar
 ENTRYPOINT ["java", "-jar", "/api-timer-1.0.0-SNAPSHOT.jar"]
+
