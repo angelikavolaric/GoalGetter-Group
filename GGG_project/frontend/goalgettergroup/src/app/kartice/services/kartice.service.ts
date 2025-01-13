@@ -38,8 +38,13 @@ export class KarticeService {
       .pipe(catchError(this.handleError));
   }
 
+  getKarticeFromSeznam(seznamId: number): Observable<Kartica[]> {
+    return this.http.get<Kartica[]>(this.url + '/' + seznamId + '/kartice')
+      .pipe(catchError(this.handleError));
+  }
+
   createSeznam(seznamId: number, artikel: Kartica): Observable<Kartica> {
-    return this.http.post<Kartica>(this.url + '/' + seznamId + '/kartice', JSON.stringify(artikel), {headers: this.headers})
+    return this.http.post<Kartica>(this.url + '/' + seznamId + '/' + 'kartice', JSON.stringify(artikel), {headers: this.headers})
       .pipe(catchError(this.handleError));
   }
 

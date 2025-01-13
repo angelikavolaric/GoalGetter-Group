@@ -1,6 +1,6 @@
 
 CREATE TABLE IF NOT EXISTS ureSeznam (id SERIAL PRIMARY KEY,
-                        opis VARCHAR(255) NOT NULL,
+                        opis VARCHAR(255),
                         ustvarjen TIMESTAMP NOT NULL,
                         predmet VARCHAR(255) DEFAULT 'undefined',
                         uporabnikId INT NOT NULL);

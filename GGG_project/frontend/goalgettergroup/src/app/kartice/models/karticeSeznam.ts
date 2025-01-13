@@ -5,7 +5,8 @@ export interface KarticeSeznam {
   predmet: string;
   opis: string;
   ustvarjen: Date;
-  kartice: Kartica[];}
+  kartice: Kartica[];
+}
 
 /*import { Kartica } from './kartica';
 

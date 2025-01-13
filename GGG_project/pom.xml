@@ -13,7 +13,7 @@
         <module>storitevUporabniki</module>
         <module>storitevDeljenje</module>
         <module>storitevTimer</module>
-        <module>storitevSporocila</module>
+        <module>storitevObvestila</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -91,5 +91,4 @@
 
         </plugins>
     </build>
-
 </project>

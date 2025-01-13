@@ -1,0 +1,44 @@
+<!-- Display Deljenje details with Edit and Delete buttons -->
+<div *ngIf="urlId !== ''">
+  <h3>Edit Cilj</h3>
+
+  <div *ngIf="deljenje">
+    <p>{{ deljenje?.id }} | Cilj Ur: {{ deljenje?.cilj_ur }} | Cilj Min: {{ deljenje?.cilj_min }} | Ustvarjen: {{ deljenje?.ustvarjen }} | Uporabnik ID: {{ deljenje?.uporabnikId }}</p>
+    <button (click)="deleteDeljenje(deljenje)">Izbriši</button>
+  </div>
+
+  <!-- Form for editing Cilj -->
+  <div *ngIf="deljenje">
+    <form (ngSubmit)="updateDeljenje(deljenje)">
+      <label for="cilj_ur">Cilj Ur:</label>
+      <input id="cilj_ur" [(ngModel)]="deljenje.cilj_ur" name="cilj_ur" required />
+
+      <label for="cilj_min">Cilj Min:</label>
+      <input id="cilj_min" [(ngModel)]="deljenje.cilj_min" name="cilj_min" required />
+
+      <label for="ustvarjen">Ustvarjen:</label>
+      <input id="ustvarjen" [(ngModel)]="deljenje.ustvarjen" name="ustvarjen" required />
+
+      <label for="uporabnikId">Uporabnik ID:</label>
+      <input id="uporabnikId" [(ngModel)]="deljenje.uporabnikId" name="uporabnikId" required />
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+
+<!-- List of Cilji (Deljenje) -->
+
+
+<ul *ngIf="urlId == ''">
+  <h2>Seznami Ciljev</h2>
+  <li *ngFor="let cilj of deljenja" style="list-style-type: none;">
+    <a [routerLink]="['/cilji', cilj.id]">
+      {{ cilj.id }} |
+      Cilj Ur: {{ cilj.cilj_ur }} |
+      Cilj Min: {{ cilj.cilj_min }} |
+      Ustvarjen: {{ cilj.ustvarjen }} |
+      Uporabnik ID: {{ cilj.uporabnikId }}
+    </a>
+  </li>
+</ul>

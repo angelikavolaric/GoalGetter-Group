@@ -30,7 +30,7 @@ public class Ure {
     @JoinColumn(name = "ureSeznamId", referencedColumnName = "id", nullable = false)  // Foreign key to KarticeSeznam
     private UreSeznam ureSeznam;
 
-    @Column(name = "uporabnikId", nullable = false)
+    @Column(name = "uporabnikId", nullable = false)  // Foreign key to KarticeSeznam
     private Integer uporabnikId;
 
 

@@ -52,7 +52,6 @@ public class KarticeSeznamVir {
         }
     }
 
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -63,13 +62,6 @@ public class KarticeSeznamVir {
                         .entity("Invalid input data.")
                         .build();
             }
-            /*KarticeSeznam id = new KarticeSeznam();
-            id.setId(novKarticeSeznam.getId());
-            id.setOpis(novKarticeSeznam.getOpis());
-            id.setPredmet(novKarticeSeznam.getPredmet());
-            id.setKartice(novKarticeSeznam.getKartice());*/
-            //novKarticeSeznam.setOpis(""+novKarticeSeznam.getId());
-            //log.info("id RAHHHHHHHHHHHHHH: " + novKarticeSeznam.getId());
             KarticeSeznam createdSeznam = upravljanjeKarticSeznamZrno.ustvariKarticeSeznam(novKarticeSeznam);
             return Response.status(Response.Status.CREATED).entity(createdSeznam).build();
         } catch (Exception e) {

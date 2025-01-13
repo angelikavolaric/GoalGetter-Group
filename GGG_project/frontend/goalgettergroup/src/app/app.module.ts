@@ -10,6 +10,11 @@ import {KarticeSeznamiComponent} from './kartice/karticeSeznami.component';
 import {KarticeService} from './kartice/services/kartice.service';
 import {KarticeComponent} from './kartice/kartice.component';
 import {KarticaService} from './kartice/services/kartica.service';
+import {UporabnikiComponent} from './Uporabniki/uporabniki.component';
+import {UporabnikiService} from './Uporabniki/services/uporabniki.service';
+import {DeljenjeService} from './deljenje/services/deljenje.service';
+import {DeljenjeComponent} from './deljenje/deljenje.component';
+import {CasovnikService} from './casovnik/services/casovnik.service';
 
 
 @NgModule({
@@ -20,13 +25,16 @@ import {KarticaService} from './kartice/services/kartica.service';
     KarticeComponent,
     AppComponent,
     KarticeSeznamiComponent,
-
+    UporabnikiComponent,
+    KarticeComponent,
+    DeljenjeComponent,
+    CasovnikService,
   ],
   declarations: [
 
 
   ],
-  providers: [KarticeService, KarticaService],
+  providers: [KarticeService, KarticaService, UporabnikiService, DeljenjeService, CasovnikService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

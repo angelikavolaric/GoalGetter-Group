@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';  // For common directives like n
 import {RouterModule, Router, ActivatedRoute} from '@angular/router';  // For routing
 import { KarticeService } from './services/kartice.service';  // Import your service
 import { KarticeSeznam} from './models/karticeSeznam';
+import { KarticaService } from './services/kartica.service';
 import { HttpClient} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {Kartica} from './models/kartica';
+import {KarticeComponent} from './kartice.component';
 
 @Component({
   selector: 'kartice-seznami',
@@ -16,7 +19,10 @@ export class KarticeSeznamiComponent implements OnInit {
   seznami: KarticeSeznam[] = [];  // Initialize the array for lists of "kartice seznam"
   seznam?: KarticeSeznam;  // Individual "kartice seznam" object
   urlId: string = "";
-  constructor(private karticeService: KarticeService, private router: Router, private route: ActivatedRoute) {}
+  kartice? : Kartica[] = [];
+  kartica?: Kartica;
+  novakartica? : Kartica;
+  constructor(private karticeService: KarticeService, private router: Router, private route: ActivatedRoute,private karticaService: KarticaService,) {}
 
   // ngOnInit lifecycle hook for initialization
   ngOnInit(): void {
@@ -25,6 +31,7 @@ export class KarticeSeznamiComponent implements OnInit {
         this.getSeznami();
       } else {
         this.getSeznam(this.urlId)
+        this.getKartice(Number(this.urlId))
       }
     })
     this.getSeznami();  // Fetch the list of kartice seznams when the component is initialized
@@ -72,5 +79,37 @@ export class KarticeSeznamiComponent implements OnInit {
         this.seznami[index] = updatedSeznam;
       }
     });
+  }
+
+  deleteKartica(kartica: Kartica): void {
+    this.karticaService
+      .deleteKartica(kartica.id)  // Call the delete service method
+      .subscribe(() => {
+        // Filter out the deleted kartica from the kartice array
+        this.kartice = this.kartice?.filter((k) => k.id !== kartica.id);
+      });
+  }
+
+  getKartice(karticeId: number): void {
+    this.karticeService.getKarticeFromSeznam(Number(karticeId)).subscribe((kartice) => {
+      this.kartice = kartice;
+    },
+      (error) => {
+        console.error('Error fetching kartica:', error);
+      })
+  }
+
+  addKartica( seznamId: number, novakartica?: Kartica): void {
+
+    if(novakartica){
+      novakartica.karticeSeznamId = seznamId;
+      this.karticaService
+        .createKartica(novakartica).subscribe((kartica) => {
+          console.log("added kartica" + kartica);  // Add the newly created kartica to the kartice array
+        });
+    } else {
+      console.log("Kartica is not defined")
+    }
+
   }
 }

@@ -18,11 +18,6 @@ export class KarticaService {
       .pipe(catchError(this.handleError));
   }
 
-  getKarticeFromUser(): Observable<Kartica[]> {
-    return this.http.get<Kartica[]>(this.url)
-      .pipe(catchError(this.handleError));
-  }
-
   // Get a single kartica by ID
   getKartica(id: number): Observable<Kartica> {
     const url = `${this.url}/${id}`;

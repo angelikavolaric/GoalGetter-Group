@@ -25,7 +25,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 import java.util.logging.Logger;
 
-@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS")
+@CrossOrigin(supportedMethods = "GET, POST, HEAD, DELETE, OPTIONS", allowOrigin = "http://localhost:4200")
 
 @Path("/timers")
 public class TimerViri {

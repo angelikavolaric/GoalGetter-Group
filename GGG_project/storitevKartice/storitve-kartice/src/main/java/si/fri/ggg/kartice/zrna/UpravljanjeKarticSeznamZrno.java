@@ -63,7 +63,6 @@ public class UpravljanjeKarticSeznamZrno {
         }
     }
 
-
     // Method to create and persist a KarticeSeznam (card list)
     @Transactional
     public KarticeSeznam ustvariKarticeSeznam(KarticeSeznam karticeSeznam) {
