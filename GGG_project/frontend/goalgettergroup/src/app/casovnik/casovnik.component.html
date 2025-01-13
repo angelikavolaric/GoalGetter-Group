@@ -1,0 +1,42 @@
+<!-- src/app/casovnik/casovnik.component.html -->
+
+<!-- Display Casovnik details with Edit and Delete buttons -->
+<div *ngIf="urlId !== ''">
+  <h3>Edit Casovnik</h3>
+
+  <div *ngIf="casovnik">
+    <p>{{ casovnik?.id }} | {{ casovnik?.opis }} | {{ casovnik?.timerUr }} | {{ casovnik?.timerMin }} | {{ casovnik?.timerSek }}</p>
+    <button (click)="deleteCasovnik(casovnik)">Izbriši</button>
+  </div>
+
+  <!-- Form for editing Casovnik -->
+  <div *ngIf="casovnik">
+    <form (ngSubmit)="updateCasovnik(casovnik)">
+      <label for="opis">Opis:</label>
+      <input id="opis" [(ngModel)]="casovnik.opis" name="opis" required />
+
+      <label for="timerUr">Ur:</label>
+      <input id="timerUr" [(ngModel)]="casovnik.timerUr" name="timerUr" required type="number" />
+
+      <label for="timerMin">Min:</label>
+      <input id="timerMin" [(ngModel)]="casovnik.timerMin" name="timerMin" required type="number" />
+
+      <label for="timerSek">Sek:</label>
+      <input id="timerSek" [(ngModel)]="casovnik.timerSek" name="timerSek" required type="number" />
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+
+<!-- List of Casovniki -->
+
+
+<ul *ngIf="urlId == ''">
+  <h2>Seznami Casovnikov</h2>
+  <li *ngFor="let casovnik of casovniki" style="list-style-type: none;">
+    <a [routerLink]="['/casovnik', casovnik.id]">
+      {{ casovnik.id }} | {{ casovnik.opis }} | {{ casovnik.timerUr }} | {{ casovnik.timerMin }} | {{ casovnik.timerSek }}
+    </a>
+  </li>
+</ul>

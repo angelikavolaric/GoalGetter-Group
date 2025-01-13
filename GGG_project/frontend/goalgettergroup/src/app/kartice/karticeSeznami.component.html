@@ -2,7 +2,7 @@
   <h2>Seznami kartic</h2>
   <ul>
     <li *ngFor="let seznam of seznami">
-      <h3>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen }} | {{ seznam.kartice }}</h3>
+      <a [routerLink]="['/karticeSeznam', seznam.id]"> {{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen }} | {{ seznam.kartice }}</a>
       <button [routerLink]="['/karticeSeznam', seznam.id]">Edit</button>
       <button (click)="deleteSeznam(seznam)">Delete</button>
     </li>
@@ -10,10 +10,10 @@
 </div>
 
 <!-- Display details for the selected Seznam -->
-<div *ngIf="urlId !== ''">
+<div *ngIf="urlId !== '' ">
   <h3>Edit Seznam</h3>
   <div *ngIf="seznam">
-    <p>{{ seznam?.id }} | {{ seznam?.predmet }} | {{ seznam?.opis }} | {{ seznam?.ustvarjen }} | {{ seznam?.kartice }}</p>
+    <p>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen }} | {{ seznam.kartice }}</p>
     <button (click)="deleteSeznam(seznam)">Izbriši</button>
   </div>
 
@@ -26,43 +26,31 @@
       <label for="opis">Opis:</label>
       <input id="opis" [(ngModel)]="seznam.opis" name="opis" required />
 
-      <label for="ustvarjen">Ustvarjen:</label>
-      <input id="ustvarjen" [(ngModel)]="seznam.ustvarjen" name="ustvarjen" required />
-
       <button type="submit">Update</button>
     </form>
-  </div>
-</div>
-<!--div *ngIf="urlId !== ''">
-  <h3>Edit Kartica</h3>
 
-  <div *ngIf="kartica">
-    <p>{{ kartica?.id }} | {{ kartica?.vprasanje }} | {{ kartica?.odgovor }} | {{ kartica?.karticeSeznamId }}</p>
-    <button (click)="deleteKartica(kartica)">Izbriši</button>
-  </div>
+  <br>
+  <br>
 
-
-  <div *ngIf="kartica">
-    <form (ngSubmit)="updateKartica(kartica)">
+    <form (ngSubmit)="addKartica(seznam.id, kartica)">
       <label for="vprasanje">Vprasanje:</label>
-      <input id="vprasanje" [(ngModel)]="kartica.vprasanje" name="vprasanje" required />
+      <input id="vprasanje" [ngModel]="kartica?.vprasanje" name="vprasanje" required />
 
       <label for="odgovor">Odgovor:</label>
-      <input id="odgovor" [(ngModel)]="seznam.odgovor" name="odgovor" required />
+      <input id="odgovor" [ngModel]="kartica?.odgovor" name="odgovor" required />
 
-      <button type="submit">Update</button>
+      <button type="submit">Dodaj Kartico</button>
     </form>
+
+    <ul>
+      <li *ngFor="let kartica of kartice">
+        <div *ngIf="kartica.karticeSeznamId === seznam.id">
+        <h3>{{ kartica.id }} | {{ kartica.vprasanje }} | {{ kartica.odgovor }}</h3>
+        <button [routerLink]="['/kartica', kartica.id]">Edit</button>
+        <button (click)="deleteKartica(kartica)">Delete</button>
+        </div>
+      </li>
+    </ul>
   </div>
+
 </div>
-
-
-<div *ngIf="urlId === ''">
-  <ul>
-    <li *ngFor="let seznam of seznami">
-      <h3>{{ seznam.id }} | {{ seznam.predmet }} | {{ seznam.opis }} | {{ seznam.ustvarjen}} | | {{ seznam.kartice }}</h3>
-      <button [routerLink]="['/karticeSeznam', seznam.id]">Edit</button>
-      <button (click)="deleteSeznam(seznam)">Delete</button>
-    </li>
-  </ul>
-</div>
-

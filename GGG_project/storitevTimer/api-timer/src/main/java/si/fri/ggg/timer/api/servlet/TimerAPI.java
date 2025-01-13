@@ -7,6 +7,7 @@ import si.fri.ggg.timer.entitete.TimerEnt;
 
 
 import javax.inject.Inject;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -14,6 +15,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@WebServlet("/servlet")
 public class TimerAPI {
 
     //TimerEnt timerEnt = new TimerEnt();

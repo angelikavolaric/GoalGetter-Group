@@ -7,7 +7,8 @@ import { routes } from './app/app.routes';  // Import your routes
 import { AppComponent } from './app/app.component'; // Import your AppComponent
 import { KarticeService } from './app/kartice/services/kartice.service';
 import {KarticaService} from './app/kartice/services/kartica.service'; // Import services
-import {HttpClientModule, provideHttpClient} from '@angular/common/http';
+import {UporabnikiService} from './app/Uporabniki/services/uporabniki.service';
+import { provideHttpClient} from '@angular/common/http';
 
 // Standalone app configuration
 export const appConfig: ApplicationConfig = {
@@ -15,7 +16,8 @@ export const appConfig: ApplicationConfig = {
     //provideZoneChangeDetection({ eventCoalescing: true }),  // Enable efficient change detection
     provideRouter(routes),  // Provide the router with the routes configuration
     KarticeService,  // Provide the KarticeService
-    KarticaService
+    KarticaService,
+    UporabnikiService,
   ]
 };
 bootstrapApplication(AppComponent, {

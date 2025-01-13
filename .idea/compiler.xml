@@ -6,18 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-belezenje" />
         <module name="entitete-kartice" />
-        <module name="storitve-uporabniki" />
         <module name="storitve-deljenje" />
         <module name="storitve-kartice" />
+        <module name="entitete-timer" />
+        <module name="storitve-timer" />
+        <module name="api-timer" />
+        <module name="api-kartice" />
+        <module name="storitve-belezenje" />
+        <module name="api-belezenje" />
+        <module name="storitve-uporabniki" />
         <module name="entitete-belezenje" />
         <module name="api-deljenje" />
         <module name="entitete-uporabniki" />
         <module name="entitete-deljenje" />
-        <module name="api-kartice" />
         <module name="api-uporabniki" />
-        <module name="storitve-belezenje" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
