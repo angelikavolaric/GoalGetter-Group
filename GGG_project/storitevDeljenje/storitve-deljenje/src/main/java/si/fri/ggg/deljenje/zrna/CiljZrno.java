@@ -10,10 +10,7 @@ import javax.annotation.PreDestroy;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.enterprise.context.ApplicationScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.logging.Logger;
@@ -138,8 +135,13 @@ public class CiljZrno {
 
         TypedQuery<Cilj> cilj = em.createQuery("SELECT c FROM Cilj c WHERE c.uporabnikid = :uporabnikId", Cilj.class);
         cilj.setParameter("uporabnikId", cID);
-        Cilj u = cilj.getSingleResult();
-        return u;
+        try {
+            Cilj u = cilj.getSingleResult();
+            return u;
+        } catch (NoResultException e) {
+            log.warning("No result found for uporabnikId: " + cID);
+            return null;
+        }
 
     }
 
