@@ -1,0 +1,163 @@
+openapi: 3.0.0
+servers:
+  - description: "Development server"
+    url: http://localhost:8082/v1
+info:
+  description: "Mikrostoritev za prijavljanje in registracijo uporabniškega računa. Uporabnik si lahko ustvari račun s katerim uporablja aplikacijo"
+  version: "1.0.0-SNAPSHOT"
+  title: "API za uporabniški račun"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Uporabnik
+    description: "Operacije za manipulacijo uporabniških računov"
+paths:
+  /uporabniki:
+    get:
+      tags:
+        - Uporabnik
+      summary: "vrne vse uporabniške račune"
+      operationId: pridobiVseUporabnike
+      description: "Vrne vse uporabniške račune na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of users accounts"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Uporabnik'
+    post:
+      tags:
+        - Uporabnik
+      summary: "doda nov uporabniški račun"
+      operationId: ustvariUporabnika
+      description: "Doda novega uporabnika na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: account already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Uporabnik'
+        description: "Primer računa, ki ga bomo dodali"
+  '/uporabniki/{uporabnikid}':
+    get:
+      tags:
+        - Uporabnik
+      summary: "vrne zahtevan uporabniški račun"
+      operationId: pridobiUre
+      description: "Vrne zahtevan uporabniški račun iz podatkovne baze"
+      parameters:
+        - name: uporabnikid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID uporabniškega računa, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Uporabnik'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "User account not found" }
+    put:
+      tags:
+        - Uporabnik
+      summary: "posodobi zahtevan uporabniški račun"
+      operationId: posodobiUporaniškiRačun
+      description: "Posodobi zahtevan uporabniški račun na podatkovni bazi"
+      parameters:
+        - name: uporabnikid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID uporabniškega računa, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "User account not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Uporabnik'
+        description: "Primer računa, ki ga bomo posodobili"
+    delete:
+      tags:
+        - Uporabnik
+      summary: "odstrani zahtevan uporabniški račun"
+      operationId: odstraniUporabniškiRačun
+      description: "Odstrani zahtevan uporabniški račun iz podatkovne baze"
+      parameters:
+        - name: uporabnikid
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID uporabniškega računa, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - user account was deleted successfully"
+        '404':
+          description: "Not found - the user account with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "User account not found" }
+components:
+  schemas:
+    Uporabnik:
+      type: object
+      required:
+        - id
+        - ime
+        - priimek
+        - uporabnisko_ime
+        - email
+      properties:
+        id:
+          type: integer
+          example: 12
+        ime:
+          type: string
+          example: Petra
+        priimek:
+          type: string
+          example: Kos
+        uporabnisko_ime:
+          type: string
+          example: petrakos
+        email:
+          type: string
+          example: 'petra.kos@hotmail.com'

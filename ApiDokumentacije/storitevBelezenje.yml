@@ -1,0 +1,343 @@
+openapi: 3.0.0
+servers:
+  - description: "Development server"
+    url: http://localhost:8084/v1
+info:
+  description: "Mikrostoritev za beleženje ur učenja uporabnika. Uporabnik lahko doda, posodobi ali odstrani svoje vnose."
+  version: "1.0.0-SNAPSHOT"
+  title: "API za storitev beleženje ur"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: BeleženjeUr
+    description: "Operacije za manipulacijo vnosov ur učenja uporabnika"
+  - name: BeleženjeSeznamovUr
+    description: "Operacije za manipulacijo seznamov ur učenja uporabnika"
+paths:
+  /ure:
+    get:
+      tags:
+        - BeleženjeUr
+      summary: "vrne vse vnose ur"
+      operationId: pridobiVseUre
+      description: "Vrne vse vnose ur na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of time entries"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ure'
+    post:
+      tags:
+        - BeleženjeUr
+      summary: "doda nov vnos ure"
+      operationId: ustvariUre
+      description: "Doda nov vnos ure na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: entry already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ure'
+        description: "Primer vnosa, ki ga bomo dodali"
+  '/ure/{uraId}':
+    get:
+      tags:
+        - BeleženjeUr
+      summary: "vrne zahtevan vnos ure"
+      operationId: pridobiUre
+      description: "Vrne zahtevan vnos ure iz podatkovne baze"
+      parameters:
+        - name: uraId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID vnosa ure, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ure'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+    put:
+      tags:
+        - BeleženjeUr
+      summary: "posodobi zahtevan vnos ure"
+      operationId: posodobiUre
+      description: "Posodobi zahtevan vnos ure na podatkovni bazi"
+      parameters:
+        - name: uraId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID vnosa ure, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ure'
+        description: "Primer vnosa, ki ga bomo posodobili"
+    delete:
+      tags:
+        - BeleženjeUr
+      summary: "odstrani zahtevan vnos ure"
+      operationId: odstraniUre
+      description: "Odstrani zahtevan vnos ure iz podatkovne baze"
+      parameters:
+        - name: uraId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID vnosa ure, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - entry was deleted successfully"
+        '404':
+          description: "Not found - the entry with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+  '/ure/uporabnik/{userId}':
+    get:
+      tags:
+        - BeleženjeUr
+      summary: "vrne napredek učenja zahtevanega uporabnika"
+      operationId: pridobiUreUporabnika
+      description: "Vrne napredek učenja zahtevanega uporabnika iz podatkovne baze"
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID uporabnika, da najdemo njegove vnose."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              example: "{ure: 10, min: 80}"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Entries not found" }
+  /seznamUr:
+    get:
+      tags:
+        - BeleženjeSeznamovUr
+      summary: "vrne vse sezname ur"
+      operationId: pridobiVseSeznameUr
+      description: "Vrne vse sezname ur na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of lists of hour entries"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SeznamUr'
+    post:
+      tags:
+        - BeleženjeSeznamovUr
+      summary: "ustvari nov seznam ur"
+      operationId: ustvariSeznamUr
+      description: "Doda nov seznam ur na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: entry already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeznamUr'
+        description: "Primer seznama, ki ga bomo dodali"
+  '/seznamUr/{ureSeznamId}':
+    get:
+      tags:
+        - BeleženjeSeznamovUr
+      summary: "vrne zahtevan seznam ur"
+      operationId: pridobiSeznamUr
+      description: "Vrne zahtevan seznam ur iz podatkovne baze"
+      parameters:
+        - name: ureSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama ur, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeznamUr'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+    put:
+      tags:
+        - BeleženjeSeznamovUr
+      summary: "posodobi zahtevan seznam ur"
+      operationId: posodobiSeznamUr
+      description: "Posodobi zahtevan seznam ur na podatkovni bazi"
+      parameters:
+        - name: ureSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama ur, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeznamUr'
+        description: "Primer seznama, ki ga bomo posodobili"
+    delete:
+      tags:
+        - BeleženjeSeznamovUr
+      summary: "odstrani zahtevan seznam ur"
+      operationId: odstraniSeznamUr
+      description: "Odstrani zahtevan seznam ur iz podatkovne baze"
+      parameters:
+        - name: ureSeznamId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID seznama ur, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - entry was deleted successfully"
+        '404':
+          description: "Not found - the entry with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Entry not found" }
+
+components:
+  schemas:
+    Ure:
+      type: object
+      required:
+        - id
+        - "vnosi ur"
+        - "vnosi min"
+        - ureSeznamId
+        - ustvarjen
+      properties:
+        id:
+          type: integer
+          example: 12
+        vnosi ur:
+          type: integer
+          example: 1
+        vnosi min:
+          type: integer
+          example: 30
+        ureSeznamId:
+          type: integer
+          example: 321
+        ustvarjen:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+    SeznamUr:
+      type: object
+      required:
+        - id
+        - opis
+        - ustvarjen
+        - uporabnikId
+      properties:
+        id:
+          type: integer
+          example: 321
+        opis:
+          type: string
+          example: "Učenje enega predmeta"
+        predmet:
+          type: string
+          example: "DPS"
+        ustvarjen:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        uporabnikId:
+          type: integer
+          example: 1

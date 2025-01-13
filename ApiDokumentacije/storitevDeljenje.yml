@@ -1,0 +1,190 @@
+openapi: 3.0.0
+servers:
+  - description: "Development server"
+    url: http://localhost:8086/v1
+info:
+  description: "Mikrostoritev za beleženje ciljev učenja uporabnika. Uporabnik lahko doda, posodobi ali odstrani svoje cilje in pogleda napredek."
+  version: "1.0.0-SNAPSHOT"
+  title: "API za storitev deljenje"
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: Cilj
+    description: "Operacije za manipulacijo ciljev učenja uporabnika"
+paths:
+  /deljenje:
+    get:
+      tags:
+        - Cilj
+      summary: "vrne vse cilje"
+      operationId: pridobiVseCilje
+      description: "Vrne vse cilje na podatkovni bazi"
+      responses:
+        '200':
+          description: "OK - list of goals"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cilj'
+    post:
+      tags:
+        - Cilj
+      summary: "doda nov cilj"
+      operationId: ustvariCilj
+      description: "Doda nov cilj na podatkovno bazo"
+      responses:
+        '201':
+          description: "Created"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '409':
+          description: "Conflict: goal already exists"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cilj'
+        description: "Primer cilja, ki ga bomo dodali"
+  '/deljenje/{ciljId}':
+    get:
+      tags:
+        - Cilj
+      summary: "vrne zahtevan cilj"
+      operationId: pridobiCilj
+      description: "Vrne zahtevan cilj iz podatkovne baze"
+      parameters:
+        - name: ciljId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID cilja, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cilj'
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Goal not found" }
+    put:
+      tags:
+        - Cilj
+      summary: "posodobi zahtevan cilj"
+      operationId: posodobiCilj
+      description: "Posodobi zahtevan cilj na podatkovni bazi"
+      parameters:
+        - name: ciljId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID cilja, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '200':
+          description: "OK"
+        '400':
+          description: "Bad request"
+          content:
+            application/json:
+              example: { "error": "Invalid input" }
+        '404':
+          description: "Page not found"
+          content:
+            application/json:
+              example: { "error": "Goal not found" }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cilj'
+        description: "Primer cilja, ki ga bomo posodobili"
+    delete:
+      tags:
+        - Cilj
+      summary: "odstrani zahtevan cilj"
+      operationId: odstraniCilj
+      description: "Odstrani zahtevan cilj iz podatkovne baze"
+      parameters:
+        - name: ciljId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID cilja, ki ga pridobimo, posodobimo ali odstranimo."
+      responses:
+        '204':
+          description: "No Content - entry was deleted successfully"
+        '404':
+          description: "Not found - the goal with the given ID does not exist"
+          content:
+            application/json:
+              example: { "error": "Goal not found" }
+  '/deljenje/napredek/{uporabnikId}':
+    get:
+      tags:
+        - Cilj
+      summary: "vrne napredek učenja"
+      operationId: pridobiUre Uporabnika
+      description: "Vrne napredek učenja in pove ali je cilj dosežen komunikacija s storitvijo beleženje ur"
+      parameters:
+        - name: uporabnikId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: "Unikaten ID uporabnika."
+      responses:
+        '200':
+          description: "OK - porgress"
+          content:
+            application/json:
+              schema:
+                type: string
+                example: "{ napredek učenja ure: 10,  napredek učenja minute: 30,  trenuten cilj ure: 20,  trenuten cilj minute: 40, cilj dosezen?: false }"
+components:
+  schemas:
+    Cilj:
+      type: object
+      required:
+        - id
+        - opis
+        - "cilj ur"
+        - "cilj min"
+        - uporabnikId
+        - ustvarjen
+      properties:
+        id:
+          type: integer
+          example: 12
+        opis:
+          type: string
+          example: 'Cilj te teden'
+        cilj ur:
+          type: integer
+          example: 1
+        cilj min:
+          type: integer
+          example: 30
+        uporabnikId:
+          type: integer
+          example: 321
+        ustvarjen:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
