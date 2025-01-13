@@ -63,11 +63,17 @@ public class UpravljanjeKarticSeznamZrno {
         }
     }
 
+
     // Method to create and persist a KarticeSeznam (card list)
     @Transactional
     public KarticeSeznam ustvariKarticeSeznam(KarticeSeznam karticeSeznam) {
         try {
-            em.persist(karticeSeznam);  // Persist the KarticeSeznam entity
+            em.getTransaction().begin();
+            em.persist(karticeSeznam);
+            em.flush();
+            em.getTransaction().commit();
+
+            //em.persist(karticeSeznam);  // Persist the KarticeSeznam entity
             log.info("KarticeSeznam persisted with ID: " + karticeSeznam.getId());
             return karticeSeznam;  // Return the persisted entity
         } catch (Exception e) {
