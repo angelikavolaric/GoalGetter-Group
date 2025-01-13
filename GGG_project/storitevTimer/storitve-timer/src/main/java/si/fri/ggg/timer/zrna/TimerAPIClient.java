@@ -1,4 +1,4 @@
-package si.fri.ggg.obvestila.zrna;
+package si.fri.ggg.timer.zrna;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import si.fri.ggg.timer.entitete.Timer;
