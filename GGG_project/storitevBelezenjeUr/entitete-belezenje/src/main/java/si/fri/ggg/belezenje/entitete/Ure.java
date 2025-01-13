@@ -51,6 +51,13 @@ public class Ure {
     public Integer getVnosiMin() {return vnosiMin;}
     public void setVnosiMin(Integer vnosi) {this.vnosiMin = vnosi;}
 
+    public Integer getUporabnikId(){
+        return uporabnikId;
+    }
+    public void setUporabnikId(Integer s){
+        this.uporabnikId = s;
+    }
+
 
 
     @PrePersist

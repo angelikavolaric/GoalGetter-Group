@@ -155,4 +155,29 @@ public class BelezenjeViri {
                     .build();
         }
     }
+
+/*
+    @GET
+    @Path("/uporabnik/{uporabnikId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getVseUreUporabnika(@PathParam("uporabnikId") int uporabnikId, int a) {
+        try {
+            UreZrno ureZrno = new UreZrno();
+            List<Object[]> vseUre = ureZrno.pridobiUreUp(uporabnikId);
+
+            if (vseUre.isEmpty()) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No study hours found.")
+                        .build();
+            }
+            return Response.ok(vseUre)
+                    .header("X-Total-Count", vseUre.size())
+                    .build();
+        } catch (Exception e) {
+            log.severe("Error retrieving study hours: " + e.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("An error occurred while retrieving study hours.")
+                    .build();
+        }
+    }*/
 }

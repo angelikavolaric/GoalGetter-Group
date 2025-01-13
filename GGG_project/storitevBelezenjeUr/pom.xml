@@ -32,6 +32,9 @@
         <kumuluzee-rest-client.version>2.0.0</kumuluzee-rest-client.version>
         <keycloak.version>20.0.1</keycloak.version>
 
+        <kafka-clients.version>2.6.0</kafka-clients.version>
+        <kafka-streams.version>2.6.0</kafka-streams.version>
+
         <postgresql.version>42.5.1</postgresql.version>
     </properties>
 
@@ -81,6 +84,17 @@
             <version>${postgresql.version}</version>
         </dependency>
 
+        <!--dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka-clients.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.kumuluz.ee.streaming</groupId>
+            <artifactId>kumuluzee-streaming-kafka</artifactId>
+            <version>${kumuluzee-streaming.version}</version>
+        </dependency-->
 
 
     </dependencies>
